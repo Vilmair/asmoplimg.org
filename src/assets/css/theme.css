@@ -4830,7 +4830,7 @@ fieldset:disabled .btn {
   padding: 0.25rem 0.75rem;
   font-size: 1.2rem;
   line-height: 1;
-  background-color: transparent;
+  background-color: #f5b657; /*transparent;*/
   border: 1px solid transparent;
   border-radius: 0.5rem;
   -webkit-transition: -webkit-box-shadow 0.15s ease-in-out;
