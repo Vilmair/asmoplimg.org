@@ -412,6 +412,13 @@
   </body>
 
   <script>
+
+$("button").click(function(){
+  $.post("test.asp", function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+});
+
     $.ajax({
    url: "/form/", 
    type: "POST",
