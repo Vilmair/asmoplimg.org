@@ -10,7 +10,7 @@
     <!--    Document Title-->
     <!-- ===============================================-->
     <title>ASMOPLI-MG</title>
-
+    <!-- https://mdbootstrap.com/docs/standard/components/modal/ -->
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
@@ -410,5 +410,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;family=Roboto:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
   </body>
+
+  <script>
+    $.ajax({
+   url: "/form/", 
+   type: "POST",
+   dataType: "json",
+   contentType: "application/json; charset=utf-8",
+   data: JSON.stringify({ name: 'value1', email: 'value2' }),
+   success: function (result) {
+       alert('data: ' + data);
+    },
+    error: function (err) {
+    alert('erro: ');
+    }
+ }); 
+  </script>
 
 </html>
