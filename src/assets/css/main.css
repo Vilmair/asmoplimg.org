@@ -353,6 +353,10 @@ h6 {
   margin-right: 55px;
 }
 
+.m-b-40 {
+  margin-bottom: 40px;
+}
+
 .m-b-55 {
   margin-bottom: 55px;
 }
@@ -581,7 +585,7 @@ input {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  padding: 0 22px;
+  padding: 0 12px;
   font-size: 16px;
   color: #555;
 }
