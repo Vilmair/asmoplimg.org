@@ -746,6 +746,11 @@ input {
   --mdb-card-spacer-x: 1rem;
 }
 
+.card-body {
+  --mdb-card-spacer-y: 1rem;
+  --mdb-card-spacer-x: 1rem;
+}
+
 .card-5 {
   background: #fff;
   -webkit-border-radius: 10px;
