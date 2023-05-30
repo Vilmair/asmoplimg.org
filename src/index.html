@@ -588,19 +588,56 @@ $("button").click(function(){
   });
 });
 
-    $.ajax({
-   url: "/form/", 
-   type: "POST",
-   dataType: "json",
-   contentType: "application/json; charset=utf-8",
-   data: JSON.stringify({ name: 'value1', email: 'value2' }),
-   success: function (result) {
-       alert('data: ' + data);
-    },
-    error: function (err) {
-    alert('erro: ');
+function recuperarCEP(input) {
+    const cep = input.value.replace(/\D/g, '');
+    const url = `https://viacep.com.br/ws/${cep}/json}`;
+    const options = {
+        method: "GET",
+        mode: "cors",
+        headers: {
+            'content-type': 'application/json;charset=utf-8',
+        }
     }
- }); 
+    if(!input.validity.patternMismatch && !input.validity.valueMissing) {
+        fetch(url, options).then(
+            response => response.json()
+        ).then(
+            data => {
+                console.log(data)
+            }
+        )
+    }
+}
+
+recuperarCEP('31035460');
+
+// $.ajax({
+//    url: "/form/", 
+//    type: "POST",
+//    dataType: "json",
+//    contentType: "application/json; charset=utf-8",
+//    data: JSON.stringify({ name: 'value1', email: 'value2' }),
+//    success: function (result) {
+//        alert('data: ' + data);
+//     },
+//     error: function (err) {
+//     alert('erro: ');
+//     }
+//  }); 
+
+//     $.ajax({
+//    url: "/form/", 
+//    type: "POST",
+//    dataType: "json",
+//    contentType: "application/json; charset=utf-8",
+//    data: JSON.stringify({ name: 'value1', email: 'value2' }),
+//    success: function (result) {
+//        alert('data: ' + data);
+//     },
+//     error: function (err) {
+//     alert('erro: ');
+//     }
+//  }); 
   </script>
 
 </html>
