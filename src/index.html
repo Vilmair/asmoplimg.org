@@ -610,6 +610,26 @@ function recuperarCEP(input) {
     }
 }
 
+           //Quando o campo cep perde o foco.
+           $("#cep").blur(function() {
+
+//Nova variável "cep" somente com dígitos.
+var cep = $(this).val().replace(/\D/g, '');
+console.log('cep', cep);
+
+                //Verifica se campo cep possui valor informado.
+                if (cep != "") {
+
+//Expressão regular para validar o CEP.
+var validacep = /^[0-9]{8}$/;
+
+//Valida o formato do CEP.
+if(validacep.test(cep)) {
+  console.log('cep ok');
+};
+                };
+});
+
 $("#plate_number").focusout(function(){
 			//Início do Comando AJAX
 			$.ajax({
