@@ -430,14 +430,14 @@
                                         <div class="row row-space">
                                             <div class="col-8">
                                                 <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="first_name">
-                                                    <label class="label--desc">Nome</label>
+                                                    <input class="input--style-5" type="text" id="first_name" required>
+                                                    <label class="label--desc" for="first_name">Nome</label>
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="last_name">
-                                                    <label class="label--desc">Apelido</label>
+                                                    <input class="input--style-5" type="text" name="surname">
+                                                    <label class="label--desc" for="surname">Apelido</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -654,7 +654,7 @@ function recuperarCEP(input) {
 }
 
 //Quando o campo cep perde o foco.
-$("#plate_number").blur(function() {
+$("#cep").blur(function() {
 
 //Nova variável "cep" somente com dígitos.
 var cep = $(this).val().replace(/\D/g, '');
@@ -672,7 +672,7 @@ if (cep != "") {
   };
 }else{
   alert('Informe o CEP antes de continuar');
-  $('#plate_number').focus();
+  $('#cep').focus();
   return false;
 };
 });
