@@ -526,18 +526,18 @@
                                   <div class="name">Veículo</div>
                                   <div class="form-group value">
                                       <div class="row row-space">
+                                        <div class="col-3">
+                                          <div class="input-group-desc">
+                                              <input class="input--style-5" type="text" id="plate_number" name="plate_number">
+                                              <label class="label--desc">Placa</label>
+                                          </div>
+                                        </div>  
                                           <div class="col-6">
                                               <div class="input-group-desc">
                                                   <input class="input--style-5" type="text" name="first_name">
                                                   <label class="label--desc">Modelo</label>
                                               </div>
-                                          </div>
-                                          <div class="col-3">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" id="plate_number" name="plate_number">
-                                                <label class="label--desc">Placa</label>
-                                            </div>
-                                        </div>                                          
+                                          </div>                                        
                                           <div class="col-3">
                                               <div class="input-group-desc">
                                                   <input class="input--style-5" type="text" name="color_name">
@@ -547,27 +547,44 @@
                                       </div>
                                   </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="name">Cidade</div>
-                                    <div class="value">
+                                <div class="form-row m-b-40">
+                                    <div class="name">Nascimento</div>
+                                    <div class="form-group value">
+                                      <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" id="plate_number" name="plate_number">
+                                            <label class="label--desc">Data</label>
+                                        </div>
+                                      </div>
+                                      <div class="col-5">
+                                        <div class="input-group">
+                                          <div class="rs-select2 js-select-simple select--no-search">
+                                              <select name="subject">
+                                                  <option disabled="disabled" selected="selected">Selecione</option>
+                                                  <option>Minas Gerais</option>
+                                                  <option>Rio de Janeiro</option>
+                                                  <option>São Paulo</option>
+                                                  <option>Tocantins</option>
+                                              </select>
+                                              <div class="select-dropdown"></div>
+                                          </div>
+                                          <label class="label--desc">Naturalidade</label>
+                                      </div>
+                                      </div>
+                                      <div class="col-4">
                                         <div class="input-group">
                                             <div class="rs-select2 js-select-simple select--no-search">
                                                 <select name="subject">
                                                     <option disabled="disabled" selected="selected">Selecione</option>
-                                                    <option>Araxá</option>
-                                                    <option>Belo Horizonte</option>
-                                                    <option>Betim</option>
-                                                    <option>Contagem</option>
-                                                    <option>Diamantina</option>
-                                                    <option>Formiga</option>
-                                                    <option>Juiz de Fora</option>
-                                                    <option>Montes Claros</option>
-                                                    <option>Sete Lagoas</option>
-                                                    <option>Uberlandia</option>
+                                                    <option>Feminino</option>
+                                                    <option>Masculino</option>
+                                                    <option>Não informar</option>
                                                 </select>
                                                 <div class="select-dropdown"></div>
                                             </div>
+                                            <label class="label--desc">Sexo</label>
                                         </div>
+                                      </div>
                                     </div>
                                 </div>
                                 <!-- <div class="form-row p-t-20">
@@ -673,7 +690,7 @@ if (cep != "") {
 }else{
   alert('Informe o CEP antes de continuar');
   $('#cep').focus();
-  return false;
+  return;
 };
 });
 
