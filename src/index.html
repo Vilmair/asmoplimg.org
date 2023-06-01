@@ -416,217 +416,215 @@
               <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <section data-page="home" id="home" class="active">
                 <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
                   <div class="wrapper wrapper--w790">
+                    <section data-page="home" id="home" class="active">
                       <div class="card card-2">
                           <div class="card-heading">
                               <h2 class="title">Registro</h2>
                           </div>
                           <div class="card-body">
-                        <p><a href="#other" data-role="link">GO TO OTHER</a></p>
+                            <p><a href="#other" data-role="link">GO TO OTHER</a></p>
+                          </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section data-page="other" id="other">
-              <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
-                <div class="wrapper wrapper--w790">
-                    <div class="card card-2">
-                        <div class="card-heading">
-                            <h2 class="title">Registro</h2>
-                        </div>
-                        <div class="card-body">
-                            <form method="POST">
-                                <div class="form-row m-b-40">
-                                    <div class="name">Nome</div>
-                                    <div class="form-group value">
-                                        <div class="row row-space">
-                                            <div class="col-8">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" id="first_name" required>
-                                                    <label class="label--desc" for="first_name">Nome Completo</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="surname">
-                                                    <label class="label--desc" for="surname">Apelido</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="form-row">
-                                    <div class="name">Company</div>
-                                    <div class="value">
-                                        <div class="input-group">
-                                            <input class="input--style-5" type="text" name="company">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="form-row">
-                                    <div class="name">Email</div>
-                                    <div class="value">
-                                        <div class="input-group">
-                                            <input class="input--style-5" type="email" name="email">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <div class="form-row m-b-40">
-                                  <div class="name">Identificação</div>
-                                  <div class="form-group value">
-                                      <div class="row row-space">
-                                          <div class="col-4">
-                                              <div class="input-group-desc">
-                                                  <input class="input--style-5" type="text" name="cpf">
-                                                  <label class="label--desc" for="cpf">CPF</label>
+                    </section>
+
+                <section data-page="other" id="other">
+                      <div class="card card-2">
+                          <div class="card-heading">
+                              <h2 class="title">Registro</h2>
+                          </div>
+                          <div class="card-body">
+                              <form method="POST">
+                                  <div class="form-row m-b-40">
+                                      <div class="name">Nome</div>
+                                      <div class="form-group value">
+                                          <div class="row row-space">
+                                              <div class="col-8">
+                                                  <div class="input-group-desc">
+                                                      <input class="input--style-5" type="text" id="first_name" required>
+                                                      <label class="label--desc" for="first_name">Nome Completo</label>
+                                                  </div>
                                               </div>
-                                          </div>
-                                          <div class="col-8">
-                                              <div class="input-group-desc">
-                                                  <input class="input--style-5" type="email" name="email">
-                                                  <label class="label--desc" for="email">Email</label>
+                                              <div class="col-4">
+                                                  <div class="input-group-desc">
+                                                      <input class="input--style-5" type="text" name="surname">
+                                                      <label class="label--desc" for="surname">Apelido</label>
+                                                  </div>
                                               </div>
                                           </div>
                                       </div>
                                   </div>
-                              </div>
-                              <div class="form-row m-b-40">
-                                <div class="name">Contato</div>
-                                <div class="value">
-                                    <div class="row row-refine">
-                                        <div class="col-6">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" name="cel_phone">
-                                                <label class="label--desc">Celular</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="tel" name="home_phone">
-                                                <label class="label--desc">Residencial</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="form-row m-b-40">
-                                <div class="name">Localidade</div>
-                                <div class="form-group value">
-                                    <div class="row row-space">
-                                        <div class="col-3">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" type="text" id="cep">
-                                                <label class="label--desc" for="cep">CEP</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                          <div class="input-group-desc">
-                                              <input class="input--style-5" disabled type="text" id="city_name" name="city_name">
-                                              <!-- <label class="label--desc">Placa</label> -->
+                                  <!-- <div class="form-row">
+                                      <div class="name">Company</div>
+                                      <div class="value">
+                                          <div class="input-group">
+                                              <input class="input--style-5" type="text" name="company">
                                           </div>
-                                      </div>                                          
-                                        <div class="col-3">
-                                            <div class="input-group-desc">
-                                                <input class="input--style-5" disabled type="text" name="state_name">
-                                                <!-- <label class="label--desc">Cor</label> -->
+                                      </div>
+                                  </div> -->
+                                  <!-- <div class="form-row">
+                                      <div class="name">Email</div>
+                                      <div class="value">
+                                          <div class="input-group">
+                                              <input class="input--style-5" type="email" name="email">
+                                          </div>
+                                      </div>
+                                  </div> -->
+                                  <div class="form-row m-b-40">
+                                    <div class="name">Identificação</div>
+                                    <div class="form-group value">
+                                        <div class="row row-space">
+                                            <div class="col-4">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="cpf">
+                                                    <label class="label--desc" for="cpf">CPF</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="email" name="email">
+                                                    <label class="label--desc" for="email">Email</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                              </div>                        
                                 <div class="form-row m-b-40">
-                                  <div class="name">Veículo</div>
+                                  <div class="name">Contato</div>
+                                  <div class="value">
+                                      <div class="row row-refine">
+                                          <div class="col-6">
+                                              <div class="input-group-desc">
+                                                  <input class="input--style-5" type="text" name="cel_phone">
+                                                  <label class="label--desc">Celular</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-6">
+                                              <div class="input-group-desc">
+                                                  <input class="input--style-5" type="tel" name="home_phone">
+                                                  <label class="label--desc">Residencial</label>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="form-row m-b-40">
+                                  <div class="name">Localidade</div>
                                   <div class="form-group value">
                                       <div class="row row-space">
+                                          <div class="col-3">
+                                              <div class="input-group-desc">
+                                                  <input class="input--style-5" type="text" id="cep">
+                                                  <label class="label--desc" for="cep">CEP</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-6">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" disabled type="text" id="city_name" name="city_name">
+                                                <!-- <label class="label--desc">Placa</label> -->
+                                            </div>
+                                        </div>                                          
+                                          <div class="col-3">
+                                              <div class="input-group-desc">
+                                                  <input class="input--style-5" disabled type="text" name="state_name">
+                                                  <!-- <label class="label--desc">Cor</label> -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>                        
+                                  <div class="form-row m-b-40">
+                                    <div class="name">Veículo</div>
+                                    <div class="form-group value">
+                                        <div class="row row-space">
+                                          <div class="col-3">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" id="plate_number" name="plate_number">
+                                                <label class="label--desc">Placa</label>
+                                            </div>
+                                          </div>  
+                                            <div class="col-6">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="first_name">
+                                                    <label class="label--desc">Modelo</label>
+                                                </div>
+                                            </div>                                        
+                                            <div class="col-3">
+                                                <div class="input-group-desc">
+                                                    <input class="input--style-5" type="text" name="color_name">
+                                                    <label class="label--desc">Cor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-row m-b-40">
+                                      <div class="name">Nascimento</div>
+                                      <div class="form-group value">
+                                        <div class="row row-space">
                                         <div class="col-3">
                                           <div class="input-group-desc">
                                               <input class="input--style-5" type="text" id="plate_number" name="plate_number">
-                                              <label class="label--desc">Placa</label>
+                                              <label class="label--desc">Data de Nascimento</label>
                                           </div>
-                                        </div>  
-                                          <div class="col-6">
-                                              <div class="input-group-desc">
-                                                  <input class="input--style-5" type="text" name="first_name">
-                                                  <label class="label--desc">Modelo</label>
-                                              </div>
-                                          </div>                                        
-                                          <div class="col-3">
-                                              <div class="input-group-desc">
-                                                  <input class="input--style-5" type="text" name="color_name">
-                                                  <label class="label--desc">Cor</label>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="form-row m-b-40">
-                                    <div class="name">Nascimento</div>
-                                    <div class="form-group value">
-                                      <div class="row row-space">
-                                      <div class="col-3">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" id="plate_number" name="plate_number">
-                                            <label class="label--desc">Data de Nascimento</label>
                                         </div>
-                                      </div>
-                                      <div class="col-5">
-                                        <div class="input-group">
-                                          <div class="rs-select2 js-select-simple select--no-search">
-                                              <select name="subject">
-                                                  <option disabled="disabled" selected="selected">Selecione</option>
-                                                  <option>Minas Gerais</option>
-                                                  <option>Rio de Janeiro</option>
-                                                  <option>São Paulo</option>
-                                                  <option>Tocantins</option>
-                                              </select>
-                                              <div class="select-dropdown"></div>
-                                          </div>
-                                          <label class="label--desc">Naturalidade</label>
-                                      </div>
-                                      </div>
-                                      <div class="col-4">
-                                        <div class="input-group">
+                                        <div class="col-5">
+                                          <div class="input-group">
                                             <div class="rs-select2 js-select-simple select--no-search">
                                                 <select name="subject">
                                                     <option disabled="disabled" selected="selected">Selecione</option>
-                                                    <option>Feminino</option>
-                                                    <option>Masculino</option>
-                                                    <option>Não informar</option>
+                                                    <option>Minas Gerais</option>
+                                                    <option>Rio de Janeiro</option>
+                                                    <option>São Paulo</option>
+                                                    <option>Tocantins</option>
                                                 </select>
                                                 <div class="select-dropdown"></div>
                                             </div>
-                                            <label class="label--desc">Sexo</label>
+                                            <label class="label--desc">Naturalidade</label>
+                                        </div>
+                                        </div>
+                                        <div class="col-4">
+                                          <div class="input-group">
+                                              <div class="rs-select2 js-select-simple select--no-search">
+                                                  <select name="subject">
+                                                      <option disabled="disabled" selected="selected">Selecione</option>
+                                                      <option>Feminino</option>
+                                                      <option>Masculino</option>
+                                                      <option>Não informar</option>
+                                                  </select>
+                                                  <div class="select-dropdown"></div>
+                                              </div>
+                                              <label class="label--desc">Sexo</label>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                                <!-- <div class="form-row p-t-20">
-                                    <label class="label label--block">Are you an existing customer?</label>
-                                    <div class="p-t-15">
-                                        <label class="radio-container m-r-55">Sim
-                                            <input type="radio" checked="checked" name="exist">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Não
-                                            <input type="radio" name="exist">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div> -->
-                                <div>
-                                    <!-- <button class="btn btn--radius-2 btn--red" type="submit">Register</button> -->
-                                    <p><a href="#home" data-role="link">GO TO HOME</a></p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </section>
+                                  <!-- <div class="form-row p-t-20">
+                                      <label class="label label--block">Are you an existing customer?</label>
+                                      <div class="p-t-15">
+                                          <label class="radio-container m-r-55">Sim
+                                              <input type="radio" checked="checked" name="exist">
+                                              <span class="checkmark"></span>
+                                          </label>
+                                          <label class="radio-container">Não
+                                              <input type="radio" name="exist">
+                                              <span class="checkmark"></span>
+                                          </label>
+                                      </div>
+                                  </div> -->
+                                  <div>
+                                      <!-- <button class="btn btn--radius-2 btn--red" type="submit">Register</button> -->
+                                      <p><a href="#home" data-role="link">GO TO HOME</a></p>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                    </section>
+                  </div>
+              </div>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cancelar</button>
