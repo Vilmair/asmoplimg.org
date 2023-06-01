@@ -470,7 +470,7 @@ h6 {
    ========================================================================== */
 [data-page]{
   position: absolute; /* or absolute if the content exceeds the height of the page */
-  width: 100%;
+  width: auto;
   min-height: 100vh;
   transform: translate3d(100%, 0, 0);
   opacity: 0;
@@ -795,6 +795,8 @@ input {
 
 .modal {
   --mdb-modal-width: 720px !important;
+  --mdb-modal-padding: 0 !important;
+  --mdb-modal-header-paddingv: 0 !important;
 }
 
 /* ==========================================================================
