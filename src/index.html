@@ -416,7 +416,7 @@
               <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+                <div class="page-wrapper bg-gra-03"><!--p-t-45 p-b-50-->
                   <div class="wrapper wrapper--w790">
                     <section data-page="home" id="home" class="active">
                       <div class="card card-2">
@@ -424,12 +424,26 @@
                               <h2 class="title">Registro</h2>
                           </div>
                           <div class="card-body">
-                            <p><a href="#other" data-role="link">GO TO OTHER</a></p>
+                            <form method="POST">
+                              <div class="form-row m-b-40">
+                                <div class="name">Inoforme</div>
+                                <div class="form-group value">
+                                    <div class="row row-space">
+                                        <div class="col-8">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" id="_cpf" required>
+                                                <label class="label--desc" for="_cpf">CPF</label>
+                                            </div>
+                                        </div>
+                                        <p><a href="#other" data-role="link">GO TO OTHER</a></p>
+                                    </div>
+                                </div>
+                              </div>
+                            </form>
                           </div>
                       </div>
                     </section>
-
-                <section data-page="other" id="other">
+                    <section data-page="other" id="other">
                       <div class="card card-2">
                           <div class="card-heading">
                               <h2 class="title">Registro</h2>
@@ -624,7 +638,6 @@
                     </section>
                   </div>
               </div>
-
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cancelar</button>
