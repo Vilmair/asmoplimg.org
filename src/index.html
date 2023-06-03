@@ -709,10 +709,10 @@ var app = (function(){
           console.log('page', page);
            if(page.id ===id){
                page.classList.add('active');
-               page.classList.add('display-none');
+               page.classList.remove('display-none');
            }else{
                page.classList.remove('active');
-               page.classList.remove('display-none');
+               page.classList.add('display-none');
            } 
         });
         return false;
