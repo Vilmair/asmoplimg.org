@@ -519,7 +519,7 @@ section p{
   display: none;
 }
 
-section + display-none {
+section + .display-none {
   display: none;
 }
 
