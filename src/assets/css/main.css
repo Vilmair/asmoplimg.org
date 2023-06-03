@@ -469,7 +469,7 @@ h6 {
    #PAGE TRANSICTION
    ========================================================================== */
 [data-page]{
-  position: absolute; /* or absolute if the content exceeds the height of the page */
+  position: relative;  /*absolute;*/ /* or absolute if the content exceeds the height of the page */
   width: auto;
   height: 100%;
   /* min-height: 100vh; */
@@ -513,6 +513,10 @@ section h1{
 
 section p{
   padding: 1rem 2rem;
+}
+
+.wrapper > .display-none {
+  display: none;
 }
 
 section + display-none {
@@ -812,6 +816,12 @@ input {
 
 .modal-body {
   overflow-y: auto;
+}
+
+@media (min-width: 576px) {
+  .modal {
+      --mdb-modal-margin: 1rem;
+  }
 }
 /* ==========================================================================
    #CARD
