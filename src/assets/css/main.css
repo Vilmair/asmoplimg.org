@@ -155,6 +155,10 @@ button {
   margin-bottom: 40px;
 }
 
+.row-space + .row-space {
+  margin-top: 40px;
+}
+
 .form-row .name {
   width: 125px;
   color: #555;
