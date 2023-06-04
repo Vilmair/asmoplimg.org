@@ -572,7 +572,7 @@
                                           </div>  
                                             <div class="col-6">
                                                 <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="model">
+                                                    <input class="input--style-5" type="text" id="model" name="model">
                                                     <label class="label--desc">Modelo</label>
                                                 </div>
                                             </div>                                        
@@ -803,8 +803,8 @@ $("#_cep").focusout(function(){
           //recuperarCEP($("#_cep")[0].value);
 					//Agora basta definir os valores que você deseja preencher
 					//automaticamente nos campos acima.
-					$("#model").val() = resposta.logradouro;
-					// $("#complemento").val(resposta.complemento);
+					$("#model").val(resposta.logradouro);
+					$("#color_name").val('resposta.complemento');
 					// $("#bairro").val(resposta.bairro);
 					// $("#cidade").val(resposta.localidade);
 					// $("#uf").val(resposta.uf);
