@@ -786,11 +786,11 @@ if (cep != "") {
 
 $("#_cep").focusout(function(){
 			//Início do Comando AJAX
-      console.log($(this).val(), $(this));
+      console.log($(this).value, $(this));
 			$.ajax({
 				//O campo URL diz o caminho de onde virá os dados
 				//É importante concatenar o valor digitado no CEP
-				url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/',
+				url: 'https://viacep.com.br/ws/'+$(this).value+'/json/',
 				//Aqui você deve preencher o tipo de dados que será lido,
 				//no caso, estamos lendo JSON.
 				dataType: 'json',
