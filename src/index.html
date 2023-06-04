@@ -739,9 +739,9 @@ $("button").click(function(){
 $('input[name="_cpf"]').mask('000.000.000-00');
 $('input[name="_cep"]').mask('00000-000');
 
-// $('input[name="_cep"]').focusout(function() {
-//    $('input[name="_cep"]').val( this.value.toUpperCase() );
-// });
+$('input[name="_cpf"]').focusout(function() {
+   $('input[name="_cpf"]').val(this.value);
+});
 
 function recuperarCEP(input) {
     console.log(input, $('#_cep'));
