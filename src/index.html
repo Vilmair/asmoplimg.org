@@ -578,7 +578,7 @@
                                             </div>                                        
                                             <div class="col-3">
                                                 <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="color_name">
+                                                    <input class="input--style-5" type="text" id="color_name" name="color_name">
                                                     <label class="label--desc">Cor</label>
                                                 </div>
                                             </div>
@@ -667,6 +667,7 @@
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
     <script src="vendors/is/is.min.js"></script>
@@ -735,6 +736,12 @@ $("button").click(function(){
   });
 });
 
+$('input[name="_cep"]').mask('00000-000');
+
+// $('input[name="_cep"]').focusout(function() {
+//    $('input[name="_cep"]').val( this.value.toUpperCase() );
+// });
+
 function recuperarCEP(input) {
     console.log(input, $('#_cep'));
     const cep = input.replace(/\D/g, '');
@@ -785,6 +792,7 @@ if (cep != "") {
 // https://dicas.codeigniter.com.br/consulta-cep-dos-correios-com-jquery-e-codeigniter/
 
 $("#_cep").focusout(function(){
+      $('input[name="_cep"]').val( this.value.toUpperCase() );
 			//Início do Comando AJAX
       console.log($("#_cep")[0].value, $("#_cep")[0]);
 			$.ajax({
@@ -804,7 +812,7 @@ $("#_cep").focusout(function(){
 					//Agora basta definir os valores que você deseja preencher
 					//automaticamente nos campos acima.
 					$("#model").val(resposta.logradouro);
-					$("#color_name").val('resposta.complemento');
+					$("#color_name").val(resposta.complemento);
 					// $("#bairro").val(resposta.bairro);
 					// $("#cidade").val(resposta.localidade);
 					// $("#uf").val(resposta.uf);
