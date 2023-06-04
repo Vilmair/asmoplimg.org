@@ -737,7 +737,7 @@ $("button").click(function(){
 
 function recuperarCEP(input) {
     input = $('#_cep');
-    console.log(input, $('#_cep'));
+    console.log(input.value, $('#_cep'));
     const cep = input.value.replace(/\D/g, '');
     const url = 'https://viacep.com.br/ws/${cep}/json/';
     const options = {
@@ -786,6 +786,7 @@ if (cep != "") {
 
 $("#_cep").focusout(function(){
 			//Início do Comando AJAX
+      console.log($(this).val(), $(this));
 			$.ajax({
 				//O campo URL diz o caminho de onde virá os dados
 				//É importante concatenar o valor digitado no CEP
