@@ -428,7 +428,7 @@
                                 <div class="name">Informe</div>
                                 <div class="form-group value">
                                     <div class="row row-space">
-                                        <div class="col-8">
+                                        <div class="col-4">
                                             <div class="input-group-desc">
                                                 <input class="input--style-5" type="text" id="_cpf" required>
                                                 <label class="label--desc" for="_cpf">CPF</label>
@@ -436,7 +436,7 @@
                                         </div>
                                     </div>
                                     <div class="row row-space">
-                                      <div class="col-4">
+                                      <div class="col-3">
                                           <div class="input-group-desc">
                                               <input class="input--style-5" type="text" id="_cep" name="_cep">
                                               <label class="label--desc" for="_cep">CEP</label>
@@ -736,6 +736,7 @@ $("button").click(function(){
   });
 });
 
+$('input[name="_cpf"]').mask('000.000.000-00');
 $('input[name="_cep"]').mask('00000-000');
 
 // $('input[name="_cep"]').focusout(function() {
@@ -787,6 +788,10 @@ if (cep != "") {
   return;
 };
 });
+
+// $("#_cep").focusout(function(){
+//       $('input[name="_cep"]').val( this.value.toUpperCase() );
+// }
 
 // https://velhobit.com.br/programacao/carregando-cep-cidades-dinamicamente.html
 // https://dicas.codeigniter.com.br/consulta-cep-dos-correios-com-jquery-e-codeigniter/
