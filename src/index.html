@@ -572,7 +572,7 @@
                                           </div>  
                                             <div class="col-6">
                                                 <div class="input-group-desc">
-                                                    <input class="input--style-5" type="text" name="first_name">
+                                                    <input class="input--style-5" type="text" name="model">
                                                     <label class="label--desc">Modelo</label>
                                                 </div>
                                             </div>                                        
@@ -683,8 +683,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;family=Roboto:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
   </body>
 
-  <script>
-
+<script>
+  //Expressão regular para validar o CEP.
+var validacep = /^[0-9]{8}$/;
     //page-anim.js
 //iife version of basic animation and navigation (without History API)
 var app = (function(){
@@ -765,16 +766,14 @@ console.log('cep', cep);
 
 //Verifica se campo cep possui valor informado.
 if (cep != "") {
-
-  //Expressão regular para validar o CEP.
-  var validacep = /^[0-9]{8}$/;
-
   //Valida o formato do CEP.
   if(validacep.test(cep)) {
     console.log('cep ok');
     recuperarCEP(cep);
+  } else {
+    console.log('cep invalido');
   };
-}else{
+} else {
   alert('Informe o CEP antes de continuar');
   //$('#cep').focus();
   return;
@@ -784,7 +783,7 @@ if (cep != "") {
 // https://velhobit.com.br/programacao/carregando-cep-cidades-dinamicamente.html
 // https://dicas.codeigniter.com.br/consulta-cep-dos-correios-com-jquery-e-codeigniter/
 
-$("#plate_number").focusout(function(){
+$("#_cep").focusout(function(){
 			//Início do Comando AJAX
 			$.ajax({
 				//O campo URL diz o caminho de onde virá os dados
@@ -802,7 +801,7 @@ $("#plate_number").focusout(function(){
           recuperarCEP($(this));
 					//Agora basta definir os valores que você deseja preencher
 					//automaticamente nos campos acima.
-					// $("#logradouro").val(resposta.logradouro);
+					$("#model").val(resposta.logradouro);
 					// $("#complemento").val(resposta.complemento);
 					// $("#bairro").val(resposta.bairro);
 					// $("#cidade").val(resposta.localidade);
