@@ -773,6 +773,7 @@ if (cep != "") {
   //Valida o formato do CEP.
   if(validacep.test(cep)) {
     console.log('cep ok');
+    recuperarCEP(cep);
   };
 }else{
   alert('Informe o CEP antes de continuar');
@@ -814,7 +815,7 @@ $("#plate_number").focusout(function(){
 			});
 		});
 
-recuperarCEP('31035460');
+// recuperarCEP('31035460');
 
 // $.ajax({
 //    url: "/form/", 
