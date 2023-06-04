@@ -737,6 +737,7 @@ $("button").click(function(){
 
 function recuperarCEP(input) {
   console.log(input, $('#_cep'));
+    input = $('#_cep');
     const cep = input.value.replace(/\D/g, '');
     const url = 'https://viacep.com.br/ws/${cep}/json/';
     const options = {
