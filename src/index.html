@@ -746,8 +746,8 @@ function recuperarCEP(input) {
             'content-type': 'application/json;charset=utf-8',
         }
     }
-    console.log('validity', input.validity);
-    if(!input.validity.patternMismatch && !input.validity.valueMissing) {
+    console.log('validity', $(this).validity);
+    if(!$(this).validity.patternMismatch && !$(this).validity.valueMissing) {
         fetch(url, options).then(
             response => response.json()
         ).then(
