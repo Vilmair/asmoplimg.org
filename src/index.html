@@ -743,6 +743,8 @@ $('input[name="_cpf"]').focusout(function() {
    $('input[name="_cpf"]').val(this.value);
 });
 
+$("[name='_cpf']").attr("required", true);
+
 function recuperarCEP(input) {
     console.log(input, $('#_cep'));
     const cep = input.replace(/\D/g, '');
