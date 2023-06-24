@@ -132,9 +132,17 @@ button {
   width: calc((100% - 30px) / 2);
 }
 
+.col-lg > .img-fluid, .col-lg > .img-thumbnail {
+  max-width: 90%;
+}
+
 @media (max-width: 767px) {
   .col-2 {
     width: 100%;
+  }
+
+  .col-lg > .img-fluid, .col-lg > .img-thumbnail {
+    max-width: 95%;
   }
 }
 
@@ -520,7 +528,7 @@ section h1{
 }
 
 section p{
-  padding: 1rem 2rem;
+  padding: 1rem 1.2rem;
 }
 
 .wrapper > .display-none {
@@ -824,6 +832,10 @@ input {
 
 .modal-body {
   overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 10px !important;
 }
 
 @media (min-width: 576px) {
