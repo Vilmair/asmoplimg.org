@@ -65,15 +65,15 @@
       <section class="pt-8 py-lg-0" id="novo">
         <div class="container-xxl">
           <div class="row align-items-center min-vh-lg-100">
-            <div class="col-lg order-lg-1 text-center"><img class="img-fluid" src="assets/img/illustrations/hero.png" alt="" /></div>
+            <div class="col-lg order-lg-1 text-center"><img class="img-fluid" src="assets/img/gallery/driver.webp" alt="driver.jpg" /></div>
             <div class="col-lg mt-5 mt-lg-0">
-              <h3 class="lh-sm font-cursive fw-medium fs-6 fs-sm-8 fs-md-11 fs-lg-9 fs-xl-11 fs-xxl-12">A associação existe <br class="d.none d-xl-block" />para você motorista</h3>
+              <h3 class="lh-sm font-cursive fw-medium fs-6 fs-sm-8 fs-md-11 fs-lg-9 fs-xl-11 fs-xxl-12">A associação existe <br class="d.none d-xl-block" />para sua segurança ecomodidade motorista</h3>
               <p class="mt-4 fs-2 fs-md-4 lh-sm">A Asmopli MG continua trabalhando para  melhor atender a todos os associados e parceiros. Queremos garantir um trabalho de qualidade com benificios multiplos para todos.</p><button class="btn btn-success mt-4" id="button" type="button" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop">Cadastre-se</button>
             </div>
           </div>
         </div><!-- end of .container-->
       </section><!-- <section> close ============================-->
-     
+
       <!-- <section> begin ============================-->
       <section class="pt-xxl-0" id="features">
         <div class="container-xxl">
@@ -550,7 +550,7 @@
                                                 <input class="input--style-5" disabled type="text" id="city_name" name="city_name">
                                                 <!-- <label class="label--desc">Placa</label> -->
                                             </div>
-                                        </div>                                          
+                                        </div>
                                           <div class="col-3">
                                               <div class="input-group-desc">
                                                   <input class="input--style-5" disabled type="text" name="state_name">
@@ -559,7 +559,7 @@
                                           </div>
                                       </div>
                                   </div>
-                                </div>                        
+                                </div>
                                   <div class="form-row m-b-40">
                                     <div class="name">Veículo</div>
                                     <div class="form-group value">
@@ -569,13 +569,13 @@
                                                 <input class="input--style-5" type="text" id="plate_number" name="plate_number">
                                                 <label class="label--desc">Placa</label>
                                             </div>
-                                          </div>  
+                                          </div>
                                             <div class="col-6">
                                                 <div class="input-group-desc">
                                                     <input class="input--style-5" type="text" id="model" name="model">
                                                     <label class="label--desc">Modelo</label>
                                                 </div>
-                                            </div>                                        
+                                            </div>
                                             <div class="col-3">
                                                 <div class="input-group-desc">
                                                     <input class="input--style-5" type="text" id="color_name" name="color_name">
@@ -692,7 +692,7 @@ var validacep = /^[0-9]{8}$/;
 var app = (function(){
     let pages = [];
     let links = [];
-    
+
     document.addEventListener("DOMContentLoaded", function(){
         pages = document.querySelectorAll('[data-page]');
         links = document.querySelectorAll('[data-role="link"]');
@@ -707,7 +707,7 @@ var app = (function(){
           button.addEventListener("click", navigate)
         });
     });
-    
+
     function navigate(ev){
       console.log('ev',ev);
         ev.preventDefault();
@@ -720,11 +720,11 @@ var app = (function(){
            }else{
                page.classList.remove('active');
                page.classList.add('display-none');
-           } 
+           }
         });
         return false;
     }
-    
+
     return {
         pages,
         links
@@ -750,6 +750,7 @@ $('input[name="_cpf"]').focusout(function() {
 
 $("[name='_cpf']").attr("required", true);
 
+// https://brasilapi.com.br/api/cnpj/v1/32440330000194
 function recuperarCEP(input) {
     console.log(input, $('#_cep'));
     const cep = input.replace(/\D/g, '');
@@ -838,7 +839,7 @@ $("#_cep").focusout(function(){
 // recuperarCEP('31035460');
 
 // $.ajax({
-//    url: "/form/", 
+//    url: "/form/",
 //    type: "POST",
 //    dataType: "json",
 //    contentType: "application/json; charset=utf-8",
@@ -849,10 +850,10 @@ $("#_cep").focusout(function(){
 //     error: function (err) {
 //     alert('erro: ');
 //     }
-//  }); 
+//  });
 
 //     $.ajax({
-//    url: "/form/", 
+//    url: "/form/",
 //    type: "POST",
 //    dataType: "json",
 //    contentType: "application/json; charset=utf-8",
@@ -863,7 +864,7 @@ $("#_cep").focusout(function(){
 //     error: function (err) {
 //     alert('erro: ');
 //     }
-//  }); 
+//  });
   </script>
 
 </html>
