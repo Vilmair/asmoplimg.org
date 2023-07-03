@@ -582,15 +582,15 @@
                               </h2>
                               <section>
                                   <div class="inner">
-                            <div class="form-row">
-                              <div class="form-holder">
-                                <label for="bank">Placa</label>
+                            <div class="row">
+                              <div class="col-md-6 mb-2">
+                                <label for="plate_number">Placa</label>
                                 <input type="text" placeholder="Informe a placa" class="form-control input-step-2" id="plate_number" name="plate_number">
                                 <span><i class="zmdi zmdi-search"></i></span>
                               </div>
-                              <div class="form-holder">
+                              <div class="col-md-6 mb-2">
                                 <label for="branch">Marca</label>
-                                <input type="text" placeholder="Volkswagen" name="branch" class="input-step-2-1" id="branch">
+                                <input type="text" placeholder="Volkswagen" name="branch" class="form-control input-step-2-1" id="branch">
                               </div>
                             </div>
                             <div class="row">
@@ -610,8 +610,9 @@
                             </div>
                             <div class="row">
                               <div class="col-md-6 mb-2">
-                                <label for="account_name">Ano Fabricação:</label>
-                                <input type="text" placeholder="Ano" class="form-control input-step-2-1" id="account_name" name="account_name">
+                                <label for="year-vehicle">Ano Fabricação</label>
+                                <select name="year" id="year-vehicle" class="form-select select">
+                                </select>
                               </div>
                               <div class="col-md-6 mb-2">
                                 <label for="color_name">Cor</label>
@@ -866,7 +867,7 @@ $(document).ready(function(){
 		return value;
    }
    
-   bindDatePicker();
+   //bindDatePicker();
  });
     });
 
@@ -921,6 +922,7 @@ let daysOfMonth = Array.from({ length: 31 }, (value, index) => index);
 
 var select = document.getElementById("date");
 var selYear = document.getElementById("year");
+var selYearVehicle = document.getElementById("year-vehicle");
 
 for (const day of daysOfMonth)
     {
@@ -945,6 +947,22 @@ for (const year of years(1950, 2023, 1))
 
     selYear.appendChild(optYear);
 }
+
+for (const year of years(2003, 2023, 1))
+{
+    //select.options[select.options.length] = new Option(day, day-1);
+    var optYearVehicle = document.createElement("option");
+    optYearVehicle.value = year;
+    optYearVehicle.text = year.toString();
+
+    if(year == 2010) {
+      optYearVehicle.selected = 'selected';
+      console.log(year);
+    }
+
+    selYearVehicle.appendChild(optYearVehicle);
+}
+
     //const optionToSelect = optYear.find(item => item.text ==='2022');
 //console.log(selYear, optionToSelect); // [0,1,2,3,4,5,6]
 
