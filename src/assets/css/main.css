@@ -938,8 +938,14 @@ input[type="checkbox"] {
 }
 
 @media (min-width: 1200px) {
+  .fs-2 {
+    font-size: 1.5rem!important;
+  }
   .fs-3 {
       font-size: 1.2rem!important;
+  }
+  .display-5 {
+    font-size: 1rem;
   }
 }
 
