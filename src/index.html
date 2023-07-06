@@ -440,35 +440,35 @@
                             <div class="row g-3">
                               <div class="col-sm-9 mb-2">
                                 <label for="first_name">Nome Completo</label>
-                                <input type="text" placeholder="ex: Laura" class="form-control form-control-lg" id="first_name" name="first_name">
+                                <input type="text" placeholder="ex: Laura" class="form-control form-control-lg" id="first_name" name="first_name" />
                               </div>
                               <div class="col-sm-3 mb-2">
-                                <label for="_cpf">CPF</label>
-                                <input type="text" placeholder="000.000.000-00" class="form-control form-control-lg" id="_cpf" name="_cpf" data-mask="000.000.000-00" required>
+                                <label for="cpf">CPF</label>
+                                <input type="text" placeholder="000.000.000-00" class="form-control form-control-lg" id="cpf" name="cpf" data-mask="000.000.000-00" required />
                               </div>
                             </div>
                             <div class="row">
                               <div class="col-md-6 mb-2">
                                 <label for="date" class="special-label">Data de Nascimento</label>
                                 <div class="input-group date" data-date-format="dd.mm.yyyy">
-                                <select name="date" id="date" class="form-select select me-3">
-                                </select>
-                                <select name="month" id="month" class="form-select select">
-                                  <option value="Jan" selected>Janeiro</option>
-                                  <option value="Fev">Fevereiro</option>
-                                  <option value="Mar">Março</option>
-                                  <option value="Abr">Abril</option>
-                                  <option value="Mai">Maio</option>
-                                  <option value="Jun">Junho</option>
-                                  <option value="Jul">Julho</option>
-                                  <option value="Ago">Agosto</option>
-                                  <option value="Set">Setembro</option>
-                                  <option value="Out">Outubro</option>
-                                  <option value="Nov">Novembro</option>
-                                  <option value="Dez">Dezembro</option>
-                                </select>
-                                <select name="year" id="year" class="form-select select ms-3">
-                                </select>
+                                  <select name="date" id="date" class="form-select select me-3">
+                                  </select>
+                                  <select name="month" id="month" class="form-select select">
+                                    <option value="Jan" selected>Janeiro</option>
+                                    <option value="Fev">Fevereiro</option>
+                                    <option value="Mar">Março</option>
+                                    <option value="Abr">Abril</option>
+                                    <option value="Mai">Maio</option>
+                                    <option value="Jun">Junho</option>
+                                    <option value="Jul">Julho</option>
+                                    <option value="Ago">Agosto</option>
+                                    <option value="Set">Setembro</option>
+                                    <option value="Out">Outubro</option>
+                                    <option value="Nov">Novembro</option>
+                                    <option value="Dez">Dezembro</option>
+                                  </select>
+                                  <select name="year" id="year" class="form-select select ms-3">
+                                  </select>
                               </div>
                               </div>
                               <div class="col-md-6 mb-2">
@@ -484,14 +484,13 @@
                             <div class="row">
                               <div class="col-sm-8 mb-2">
                                 <label for="email">Email</label>
-                                <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email">
+                                <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" />
                               </div>
                               <div class="col-sm-4 mb-2">
-                                <label for="_cpf">Telefone</label>
-                                <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="telefone" name="telefone" data-mask="99 99999 9999" required>
+                                <label for="telefone">Telefone</label>
+                                <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="telefone" name="telefone" data-mask="99 99999 9999" required />
                               </div>
                             </div>
-                            <div class="divider-1 wow fadeInUp"><span></span></div>
                             <fieldset class="form-group border p-3 mb-2" style="display:none">
                             <legend class="w-auto px-2">User's Credentials</legend>                            
                             <div class="row">
@@ -500,20 +499,17 @@
                                     <label class="me-4 mt-3" for="gender">Sexo</label>
                   
                                     <div class="form-check form-check-inline mt-4 b-0 me-4">
-                                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                                        value="option1" />
+                                      <input class="form-check-input" type="radio" name="femaleGender" id="femaleGender" value="option1" />
                                       <label class="form-check-label" for="femaleGender">Feminino</label>
                                     </div>
                   
                                     <div class="form-check form-check-inline mt-4 mb-0 me-4">
-                                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                                        value="option2" />
+                                      <input class="form-check-input" type="radio" name="maleGender" id="maleGender" value="option2" />
                                       <label class="form-check-label" for="maleGender">Masculino</label>
                                     </div>
 
                                     <div class="form-check form-check-inline mt-4 mb-0 me-4">
-                                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="nonGender"
-                                        value="option3" />
+                                      <input class="form-check-input" type="radio" name="nonGender" id="nonGender" value="option3" />
                                       <label class="form-check-label" for="nonGender">Não informar</label>
                                     </div>
                                   </div>
@@ -523,17 +519,17 @@
                             <div class="row">
                               <div class="col-sm-3 mb-2">
                                 <label for="cep">CEP</label>
-                                <input type="text" class="form-control" id="cep" name="cep">
+                                <input type="text" class="form-control" id="cep" name="cep" />
                               </div>
                               <div class="form-holder form-holder-3" style="visibility:hidden">
                                 <label for="phone">Phone Number</label>
-                                <input type="text" placeholder="+1 777-888-8888" class="form-control" id="phone" name="phone">
+                                <input type="text" placeholder="+1 777-888-8888" class="form-control" id="phone" name="phone" />
                               </div>
                             </div>
                             <div class="row row-space">
                               <div class="col-sm-12 mb-2">
                                 <label for="address">Endereço</label>
-                                <input type="text" placeholder="Logradouro" class="form-control form-control-lg" id="address" name="address">
+                                <input type="text" placeholder="Logradouro" class="form-control form-control-lg" id="address" name="address" />
                                 <span><i class="zmdi zmdi-pin"></i></span>
                               </div>
                             </div>
@@ -541,7 +537,7 @@
                               <div class='col-sm-3 mb-2'>                                   
                                     <!-- Datepicker as text field -->         
                                     <div class="input-group date" data-date-format="dd.mm.yyyy">
-                                      <input  type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                      <input  type="text" class="form-control" placeholder="dd.mm.yyyy" />
                                       <div class="input-group-addon" >
                                         <span class="glyphicon glyphicon-th"></span>
                                       </div>
@@ -552,7 +548,7 @@
                               <div class="col-md-6 mb-4">
               
                                 <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker date" inline="true">
-                                  <input placeholder="Select date" type="text" id="example" class="form-control">
+                                  <input placeholder="Select date" type="text" id="example" class="form-control" />
                                   <label for="example">Try me...</label>
                                   <i class="fas fa-calendar input-prefix"></i>
                                 </div>
@@ -585,18 +581,18 @@
                             <div class="row">
                               <div class="col-md-6 mb-2">
                                 <label for="plate_number">Placa</label>
-                                <input type="text" placeholder="Informe a placa" class="form-control input-step-2" id="plate_number" name="plate_number">
+                                <input type="text" placeholder="Informe a placa" class="form-control input-step-2" id="plate_number" name="plate_number" />
                                 <span><i class="zmdi zmdi-search"></i></span>
                               </div>
                               <div class="col-md-6 mb-2">
                                 <label for="branch">Marca</label>
-                                <input type="text" placeholder="Volkswagen" name="branch" class="form-control input-step-2-1" id="branch">
+                                <input type="text" placeholder="Volkswagen" name="branch" class="form-control input-step-2-1" id="branch" />
                               </div>
                             </div>
                             <div class="row">
                               <div class="col-md-6 mb-2">
                                 <label for="model">Modelo</label>
-                                <input type="text" placeholder="Informe o modelo" class="form-control input-step-2" id="model" name="model">                                
+                                <input type="text" placeholder="Informe o modelo" class="form-control input-step-2" id="model" name="model" />                                
                               </div>
                               <div class="col-md-6 mb-2">
                                 <label for="owner">Propriedade</label>
@@ -616,13 +612,13 @@
                               </div>
                               <div class="col-md-6 mb-2">
                                 <label for="color_name">Cor</label>
-                                <input type="text" name="color_name" class="form-control" id="color_name" placeholder="Informe a cor" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                                <input type="text" name="color_name" class="form-control" id="color_name" placeholder="Informe a cor" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" />
                               </div>
                             </div>
                             <div class="form-row" style="display:none;">
                               <div class="form-holder form-holder-2">
                                 <label for="account_number">Account Number:</label>
-                                <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number">
+                                <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number" />
                                 <span class="card"><i class="zmdi zmdi-card"></i></span>
                               </div>
                             </div>
@@ -683,8 +679,8 @@
                             </div> -->
                             <div class="form-row" style="display:none;">
                               <div class="form-holder form-holder-2 placeholder-glow">
-                                <label for="account_number">Account Number:</label>
-                                <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number">
+                                <label for="account_num">Account Number:</label>
+                                <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_num" name="account_num" />
                                 <span class="placeholder col-6"><i class="zmdi zmdi-card"></i></span>
                               </div>
                             </div>
@@ -823,7 +819,40 @@ var validacep = /^[0-9]{8}$/;
 
 $(document).ready(function(){
 
+  console.log($("#cpf")[0].value, $("#cpf"));
+  console.log('CEP', $("#cep")[0].value, $("#cep")[0]);
+
+
   $(function () {
+    $( "#cep" ).on( "blur", function() {
+
+//Nova variável "cep" somente com dígitos.
+var cep = $(this).val().replace(/\D/g, '');
+console.log('cep', cep);
+
+//Verifica se campo cep possui valor informado.
+if (cep != "") {
+  //Valida o formato do CEP.
+  if(validacep.test(cep)) {
+    console.log('cep ok');
+    recuperarCEP(cep);
+  } else {
+    console.log('cep invalido');
+  };
+} else {
+  alert('Informe o CEP antes de continuar');
+  //$('#cep').focus();
+  return;
+};
+});
+
+$('#cep').on('focus', function() {
+     //$(this).toggleClass('input1 input2');
+});
+
+$('input[name="cpf"]').mask('000.000.000-00');
+$('input[name="cep"]').mask('00000-000');
+
    var bindDatePicker = function() {
 		$(".date").datetimepicker({
         format:'DD/MM/YYYY',
@@ -852,12 +881,12 @@ $(document).ready(function(){
 		// lets parse the date to the best of our knowledge
 		if (format) {
 			value = parseDate(value);
-		}
+		};
 
 		var timestamp = Date.parse(value);
 
 		return isNaN(timestamp) == false;
-   }
+   };
    
    var parseDate = function(value) {
 		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
@@ -869,7 +898,28 @@ $(document).ready(function(){
    
    //bindDatePicker();
  });
+
+ $("#cpf").focusout(function(){
+      $('input[name="cpf"]').val( this.value.toUpperCase() );
+			//Início do Comando AJAX
+      console.log($("#cpf")[0].value, $("#cpf")[0]);
+});
+
+
+
+// $('input[name="cpf"]').focusout(function() {
+//    $('input[name="cpf"]').val(this.value);
+// });
+
+$("[name='cpf']").attr("required", true);
+
+$("cpf").val('2');
+
+$("cep").val('3');
+
     });
+
+    // $('input[id="cep"]').val('5');
 
     //page-anim.js
 //iife version of basic animation and navigation (without History API)
@@ -931,7 +981,7 @@ for (const day of daysOfMonth)
         option.value = day;
         option.text = day + 1 < 10 ? '0' + (day + 1).toString() : (day + 1).toString();
         select.appendChild(option);
-    }
+    };
 
 for (const year of years(1950, 2023, 1))
 {
@@ -946,7 +996,7 @@ for (const year of years(1950, 2023, 1))
     }
 
     selYear.appendChild(optYear);
-}
+};
 
 for (const year of years(2003, 2023, 1))
 {
@@ -961,7 +1011,7 @@ for (const year of years(2003, 2023, 1))
     }
 
     selYearVehicle.appendChild(optYearVehicle);
-}
+};
 
     //const optionToSelect = optYear.find(item => item.text ==='2022');
 //console.log(selYear, optionToSelect); // [0,1,2,3,4,5,6]
@@ -981,28 +1031,11 @@ $("button").click(function(){
   });
 });
 
-$("#_cpf").focusout(function(){
-      $('input[name="_cpf"]').val( this.value.toUpperCase() );
-			//Início do Comando AJAX
-      console.log($("#_cpf")[0].value, $("#_cpf")[0]);
-});
-
-console.log('000.000.000-00');
-
-//$('input[name="_cpf"]').mask('000.000.000-00');
-$('input[name="_cep"]').mask('00000-000');
-
-$('input[name="_cpf"]').focusout(function() {
-   $('input[name="_cpf"]').val(this.value);
-});
-
-$("[name='_cpf']").attr("required", true);
-
 // https://brasilapi.com.br/api/cnpj/v1/32440330000194
 function recuperarCEP(input) {
-    console.log(input, $('#_cep'));
+    console.log('input', input, $('#cep'));
     const cep = input.replace(/\D/g, '');
-    const url = 'https://viacep.com.br/ws/${cep}/json/';
+    const url = 'https://viacep.com.br/ws/' + input + '/json/';
     const options = {
         method: "GET",
         mode: "cors",
@@ -1010,8 +1043,8 @@ function recuperarCEP(input) {
             'content-type': 'application/json;charset=utf-8',
         }
     }
-    console.log('validity', $('#_cep')[0].validity);
-    if(!$('#_cep')[0].validity.patternMismatch && !$('#_cep')[0].validity.valueMissing) {
+    console.log('validity', $('#cep')[0].validity);
+    if(!$('#cep')[0].validity.patternMismatch && !$('#cep')[0].validity.valueMissing) {
         fetch(url, options).then(
             response => response.json()
         ).then(
