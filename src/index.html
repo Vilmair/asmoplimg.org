@@ -473,7 +473,7 @@
                               </div>
                               <div class="col-md-6 mb-2">
                                 <label for="gender">Sexo</label>
-                                <select class="form-select select" name="gender">
+                                <select class="form-select select" id="gender" name="gender">
                                   <option value="1" disabled>Genero</option>
                                   <option value="2">Feminino</option>
                                   <option value="3">Masculino</option>
@@ -487,8 +487,8 @@
                                 <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" required/>
                               </div>
                               <div class="col-sm-4 mb-2">
-                                <label for="telefone">Telefone</label>
-                                <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="telefone" name="telefone" data-mask="99 99999 9999" required />
+                                <label for="phone">Telefone</label>
+                                <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="phone" name="phone" data-mask="99 99999 9999" required />
                               </div>
                             </div>
                             <fieldset class="form-group border p-3 mb-2" style="display:none">
@@ -720,7 +720,7 @@
                               </h2>
                               <section>
                                   <div class="inner">
-                                    <h3>Comfirmação</h3>
+                                    <h3>Confirmação</h3>
                             <div class="form-row table-responsive">
                               <table class="table">
                                 <tbody>
@@ -750,7 +750,7 @@
                                   </tr>
                                   <tr class="space-row">
                                     <th>Placa:</th>
-                                    <td id="account-number-val"></td>
+                                    <td id="plate_number-val"></td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -764,7 +764,7 @@
                               </h2>
                               <section>
                                   <div class="inner">
-                                    <h3>Comfirmação</h3>
+                                    <h3>Firnalizar</h3>
                             <div class="form-row table-responsive">
                               <table class="table">
                                 <tbody>
@@ -794,7 +794,7 @@
                                   </tr>
                                   <tr class="space-row">
                                     <th>Placa:</th>
-                                    <td id="account-number-val"></td>
+                                    <td id="plate_number-val"></td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -1277,13 +1277,16 @@ $(function(){
             current : ''
         },
         onStepChanging: function (event, currentIndex, newIndex) { 
-            var fullname = $('#first_name').val() + ' ' + $('#last_name').val();
+            var fullname = $('#first_name').val() + ' ' + $('#cpf').val();
+            var cpf = $('#cpf').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
             var address = $('#address').val();
-            var gender = $('form input[type=radio]:checked').val();
+            var gender1 = $('form input[type=radio]:checked').val();
+            var gender = $('select#gender option').filter(':selected').text();
+            var date = $('select#date option').filter(':selected').text();
             var account_name = $('#account_name').val();
-            var account_number = $('#account_number').val();
+            var plate_number = $('#plate_number').val();
 
             $('#fullname-val').text(fullname);
             $('#email-val').text(email);
@@ -1291,7 +1294,7 @@ $(function(){
             $('#address-val').text(address);
             $('#gender-val').text(gender);
             $('#account-name-val').text(account_name);
-            $('#account-number-val').text(account_number);
+            $('#plate_number-val').text(plate_number);
 
             return true;
         }
