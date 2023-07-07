@@ -425,7 +425,7 @@
               <div class="page-content">
                 <div class="wizard-v5-content">
                   <div class="wizard-form">
-                        <form class="form-register" id="form-register" action="#" method="post">
+                        <form class="form-register needs-validation" id="form-register" action="#" method="post">
                           <div id="form-total">
                             <!-- https://mdbootstrap.com/docs/standard/extended/registration/ -->
                             <!-- https://mdbootstrap.com/docs/standard/forms/input-group/ -->
@@ -440,7 +440,7 @@
                             <div class="row g-3">
                               <div class="col-sm-9 mb-2">
                                 <label for="first_name">Nome Completo</label>
-                                <input type="text" placeholder="ex: Laura" class="form-control form-control-lg" id="first_name" name="first_name" />
+                                <input type="text" placeholder="ex: Laura" class="form-control form-control-lg" id="first_name" name="first_name" required/>
                               </div>
                               <div class="col-sm-3 mb-2">
                                 <label for="cpf">CPF</label>
@@ -453,7 +453,7 @@
                                 <div class="input-group date" data-date-format="dd.mm.yyyy">
                                   <select name="date" id="date" class="form-select select me-3">
                                   </select>
-                                  <select name="month" id="month" class="form-select select">
+                                  <select name="month" id="month" class="form-select select" >
                                     <option value="Jan" selected>Janeiro</option>
                                     <option value="Fev">Fevereiro</option>
                                     <option value="Mar">Março</option>
@@ -484,7 +484,7 @@
                             <div class="row">
                               <div class="col-sm-8 mb-2">
                                 <label for="email">Email</label>
-                                <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" />
+                                <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" required/>
                               </div>
                               <div class="col-sm-4 mb-2">
                                 <label for="telefone">Telefone</label>
