@@ -519,18 +519,45 @@
                             <div class="row">
                               <div class="col-sm-3 mb-2">
                                 <label for="cep">CEP</label>
-                                <input type="text" class="form-control" id="cep" name="cep" />
+                                <input type="text" class="form-control form-control-lg" placeholder="Entre com o CEP" style="text-align:end; padding-right:1em;" id="cep" name="cep" />
                               </div>
-                              <div class="form-holder form-holder-3" style="visibility:hidden">
+                              <div class="col-sm-4 mb-2 align-items-center">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" id="chkcep">
+                                  <label class="form-check-label" for="chkcep">
+                                    Não sei o CEP
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-sm-5 mb-2" style="visibility:hidden">
                                 <label for="phone">Phone Number</label>
                                 <input type="text" placeholder="+1 777-888-8888" class="form-control" id="phone" name="phone" />
                               </div>
                             </div>
-                            <div class="row row-space">
-                              <div class="col-sm-12 mb-2">
+                            <div class="row">
+                              <div class="col-sm-7 mb-2">
                                 <label for="address">Endereço</label>
-                                <input type="text" placeholder="Logradouro" class="form-control form-control-lg" id="address" name="address" />
+                                <input type="text" placeholder="Logradouro" class="form-control form-control-lg" id="address" name="address" disabled="true" />
                                 <span><i class="zmdi zmdi-pin"></i></span>
+                              </div>
+                              <div class="col-sm-2 mb-2">
+                                <label for="address-number">Número</label>
+                                <input type="text" placeholder="Informe o número do endereço" class="form-control form-control-lg" id="address-number" name="address-number" />
+                              </div>
+                              <div class="col-sm-3 mb-2">
+                                <label for="address-extend">Complemento</label>
+                                <input type="text" placeholder="Informe o complemento do endereço" class="form-control form-control-lg" id="address-extend" name="address-extend" />
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-8 mb-2">
+                                <label for="address-city">Cidade</label>
+                                <input type="text" placeholder="Cidade" class="form-control form-control-lg" id="address-city" name="address-city" disabled="true" />
+                              </div>
+                              <div class="col-sm-4 mb-2">
+                                <label for="address-state">Estado</label>
+                                <input type="text" placeholder="Estado" class="form-control form-control-lg" id="address-state" name="address-state" disabled="true"/>
+                                <!-- <span><i class="zmdi zmdi-pin"></i></span> -->
                               </div>
                             </div>
                             <div class="row" style="display:none">
@@ -824,6 +851,21 @@ $(document).ready(function(){
 
 
   $(function () {
+ 
+    $("#chkcep").change(function() {
+      $("#cep").prop('disabled', $(this).prop('checked'));
+      $("#address").prop('disabled', !$(this).prop('checked'));
+      $("#address-city").prop('disabled', !$(this).prop('checked'));
+      $("#address-state").prop('disabled', !$(this).prop('checked'));
+      $("#address").focus();
+      // if($(this).prop('checked')) {
+      //   $("#cep").prop('disabled', true);
+      //   address
+      // } else {
+      //   $("#cep").prop('disabled', false);
+      // }
+    });
+
     $( "#cep" ).on( "blur", function() {
 
 //Nova variável "cep" somente com dígitos.
@@ -1035,7 +1077,7 @@ $("button").click(function(){
 function recuperarCEP(input) {
     console.log('input', input, $('#cep'));
     const cep = input.replace(/\D/g, '');
-    const url = 'https://viacep.com.br/ws/' + input + '/json/';
+    const url = 'https://viacep.com.br/ws/' + input + '/json/'; //const url = 'https://viacep.com.br/ws/${cep}/json/';
     const options = {
         method: "GET",
         mode: "cors",
@@ -1049,7 +1091,10 @@ function recuperarCEP(input) {
             response => response.json()
         ).then(
             data => {
-                console.log('viacep.com.br', data)
+                console.log('viacep.com.br', data);
+                $("#address").val(data.logradouro);
+                $("#address-city").val(data.localidade);
+                $("#address-state").val(data.uf == 'MG' ? 'Minas Gerais' : data.uf);
             }
         )
     }
@@ -1105,7 +1150,7 @@ $("#_cep").focusout(function(){
           //recuperarCEP($("#_cep")[0].value);
 					//Agora basta definir os valores que você deseja preencher
 					//automaticamente nos campos acima.
-					$("#model").val(resposta.logradouro);
+					$("#address").val(resposta.logradouro);
 					$("#color_name").val(resposta.complemento);
 					// $("#bairro").val(resposta.bairro);
 					// $("#cidade").val(resposta.localidade);
