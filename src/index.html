@@ -70,8 +70,9 @@
           <div class="row align-items-center min-vh-lg-100">
             <div class="col-lg order-lg-1 text-center"><img class="img-fluid" src="assets/img/gallery/driver.webp" alt="driver.jpg" /></div>
             <div class="col-lg mt-5 mt-lg-0">
-              <h3 class="lh-sm fw-medium fs-sm-2 fs-md-3 fs-lg-2 fs-xl-3 fs-xxl-2">A associação existe <br class="d.none d-xl-block" />para sua segurança ecomodidade motorista</h3>
-              <p class="mt-4 fs-3 fs-md-4 lh-sm">A Asmopli MG continua trabalhando para  melhor atender a todos os associados e parceiros. Queremos garantir um trabalho de qualidade com beneficios multiplos para todos.</p><button class="btn btn-success mt-4" id="button" type="button" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop">Cadastre-se</button>
+              <h3 class="mx-4">A associação existe para sua segurança e comodidade motorista</h3>
+              <p class="mt-4 fs-3 fs-md-4 lh-sm">A Asmopli MG continua trabalhando para  melhor atender a todos os associados e parceiros. Queremos garantir um trabalho de qualidade com beneficios multiplos para todos.</p>
+              <button class="btn btn-success mt-4 mx-4" id="button" type="button" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop">Cadastre-se</button>
             </div>
           </div>
         </div><!-- end of .container-->
@@ -123,7 +124,7 @@
             <div class="row align-items-center">
               <div class="col-md-5">
                 <h1 class="display-5 font-cursive">Driver Connect</h1>
-                <p class="fs-4">A plataforma Driver Connect permite o uso da tecnologia para aprimoramento da segurança nas viagens, trazendo mais tranquilidade a todos os embarcados.</p>
+                <p class="fs-4">A plataforma Driver Connect permite o uso da tecnologia para o aprimoramento da segurança nas viagens, trazendo mais tranquilidade a todos os embarcados.</p>
               </div>
               <div class="col-md-7 col-xl-5 offset-xl-1">
                 <div class="ratio ratio-16x9">
@@ -472,6 +473,16 @@
                               </div>
                             </div>
                             <div class="row">
+                              <div class="col-sm-8 mb-2">
+                                <label for="email">Email</label>
+                                <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" required/>
+                              </div>
+                              <div class="col-sm-4 mb-2">
+                                <label for="phone">Telefone</label>
+                                <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="phone" name="phone" data-mask="99 99999 9999" required />
+                              </div>
+                            </div>
+                            <div class="row">
                               <div class="col-md-6 mb-2">
                                 <label for="date" class="special-label">Data de Nascimento</label>
                                 <div class="input-group date" data-date-format="dd.mm.yyyy">
@@ -503,16 +514,6 @@
                                   <option value="3">Masculino</option>
                                   <option value="4">Não informar</option>
                                 </select>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-8 mb-2">
-                                <label for="email">Email</label>
-                                <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" required/>
-                              </div>
-                              <div class="col-sm-4 mb-2">
-                                <label for="phone">Telefone</label>
-                                <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="phone" name="phone" data-mask="99 99999 9999" required />
                               </div>
                             </div>
                             <fieldset class="form-group border p-3 mb-2" style="display:none">
@@ -962,6 +963,52 @@ $('input[name="cep"]').mask('00000-000');
 		return value;
    }
    
+   const years = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
+
+    let daysOfMonth = Array.from({ length: 31 }, (value, index) => index);
+
+    var select = document.getElementById("date");
+    var selYear = document.getElementById("year");
+    var selYearVehicle = document.getElementById("year-vehicle");
+
+    for (const day of daysOfMonth)
+        {
+            //select.options[select.options.length] = new Option(day, day-1);
+            var option = document.createElement("option");
+            option.value = day;
+            option.text = day + 1 < 10 ? '0' + (day + 1).toString() : (day + 1).toString();
+            select.appendChild(option);
+        };
+
+    for (const year of years(1950, 2023, 1))
+    {
+        //select.options[select.options.length] = new Option(day, day-1);
+        var optYear = document.createElement("option");
+        optYear.value = year;
+        optYear.text = year.toString();
+
+        if(year == 2010) {
+          optYear.selected = 'selected';
+          console.log(year);
+        }
+
+        selYear.appendChild(optYear);
+    };
+
+    for (const year of years(2003, 2023, 1))
+    {
+        //select.options[select.options.length] = new Option(day, day-1);
+        var optYearVehicle = document.createElement("option");
+        optYearVehicle.value = year;
+        optYearVehicle.text = year.toString();
+
+        if(year == 2010) {
+          optYearVehicle.selected = 'selected';
+          console.log(year);
+        }
+
+        selYearVehicle.appendChild(optYearVehicle);
+    };
    //bindDatePicker();
  });
 
@@ -1031,53 +1078,6 @@ var app = (function(){
         // xhr: ajax
     }
 })();
-
-const years = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
-
-let daysOfMonth = Array.from({ length: 31 }, (value, index) => index);
-
-var select = document.getElementById("date");
-var selYear = document.getElementById("year");
-var selYearVehicle = document.getElementById("year-vehicle");
-
-for (const day of daysOfMonth)
-    {
-        //select.options[select.options.length] = new Option(day, day-1);
-        var option = document.createElement("option");
-        option.value = day;
-        option.text = day + 1 < 10 ? '0' + (day + 1).toString() : (day + 1).toString();
-        select.appendChild(option);
-    };
-
-for (const year of years(1950, 2023, 1))
-{
-    //select.options[select.options.length] = new Option(day, day-1);
-    var optYear = document.createElement("option");
-    optYear.value = year;
-    optYear.text = year.toString();
-
-    if(year == 2010) {
-      optYear.selected = 'selected';
-      console.log(year);
-    }
-
-    selYear.appendChild(optYear);
-};
-
-for (const year of years(2003, 2023, 1))
-{
-    //select.options[select.options.length] = new Option(day, day-1);
-    var optYearVehicle = document.createElement("option");
-    optYearVehicle.value = year;
-    optYearVehicle.text = year.toString();
-
-    if(year == 2010) {
-      optYearVehicle.selected = 'selected';
-      console.log(year);
-    }
-
-    selYearVehicle.appendChild(optYearVehicle);
-};
 
     //const optionToSelect = optYear.find(item => item.text ==='2022');
 //console.log(selYear, optionToSelect); // [0,1,2,3,4,5,6]
