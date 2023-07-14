@@ -1639,8 +1639,8 @@ textarea:focus{
   outline: 1.5px solid #ec1c24;
 }
 
-.form-input,
-textarea {
+.contain .form-input,
+.contain textarea {
   width: 100%;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
@@ -1663,9 +1663,9 @@ textarea {
 .contain form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: .1em;
 }
-.containform label {
+.contain form label {
   display: block;
 }
 section .contain p {
@@ -1682,6 +1682,7 @@ section .contain p {
 .contain form button,
 .contain form .submit-btn,
 .contain form .form-input,
+.contain form .form-select
 .contain form textarea {
   padding: .8em;
 }
