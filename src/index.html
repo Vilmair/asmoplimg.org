@@ -401,7 +401,59 @@
         </div><!-- end of .container-->
       </section><!-- <section> close ============================-->
       <!-- ============================================-->
+      <section>
+        <div class="contain">
 
+          <div class="wrapper">
+        
+            <div class="form">
+              <h5>[CONTATO]</h4>
+              <h4 class="form-headline">Nos envie sua menssagem</h4>
+              <form id="submit-form" action="">
+                <p>
+                  <input id="name" class="form-input" type="text" placeholder="Seu Name*">
+                  <small class="name-error"></small>
+                </p>
+                <p>
+                  <input id="email" class="form-input" type="email" placeholder="Seu Email*">
+                  <small class="name-error"></small>
+                </p>
+                <p class="full-width">
+                  <input id="company-name" class="form-input" type="text" placeholder="Motivo do contato*" required>
+                  <small></small>
+                </p>
+                <p class="full-width">
+                  <textarea  minlength="20" id="message" cols="30" rows="7" placeholder="Sua Message*" required></textarea>
+                  <small></small>
+                </p>
+                <p class="full-width">
+                  <input type="checkbox" id="checkbox" name="checkbox" checked /> <span> Aceito receber comunicações por email sobre a Asmopli-MG.</span>
+                </p>
+                <p class="full-width">
+                  <button type="submit" class="submit-btn" value="Submit" onclick="checkValidations()">Enviar</button>
+                  <button class="reset-btn" onclick="reset()">Limpar</button>
+                </p>
+              </form>
+            </div>
+        
+            <div class="contacts contact-wrapper">
+        
+              <ul>
+                <!-- <li>We've driven online revenues of over <span class="highlight-text-grey">$2
+                    billion</span> for our clients. Ready to know
+                  how we can help you?
+                </li> -->
+                <li>Estamos prontos para servi-lo. Como podemos ajudar você?
+                </li>
+                <span class="hightlight-contact-info">
+                  <li class="email-info"><i class="fa fa-envelope" aria-hidden="true"></i> comercialasmoplimg@gmail.com</li>
+                  <li><i class="fa fa-phone" aria-hidden="true"></i> <span class="highlight-text">31 91111 0000</span></li>
+                </span>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- ============================================-->
       <!-- <section> begin ============================-->
       <section class="py-4">
@@ -450,7 +502,7 @@
               <div class="page-content">
                 <div class="wizard-v5-content">
                   <div class="wizard-form">
-                        <form class="form-register needs-validation" id="form-register" action="#" method="post">
+                        <form class="form-register needs-validation" id="form-register" action="javascript:{}" method="post">
                           <div id="form-total">
                             <!-- https://mdbootstrap.com/docs/standard/extended/registration/ -->
                             <!-- https://mdbootstrap.com/docs/standard/forms/input-group/ -->
@@ -548,7 +600,7 @@
                               </div>
                               <div class="col-sm-4 mb-2 align-items-center">
                                 <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" id="chkcep">
+                                  <input class="form-check-input" type="checkbox" id="chkcep" /><!--https://wakeupandcode.com/forms-and-fields-in-asp-net-core/-->
                                   <label class="form-check-label" for="chkcep">
                                     Não sei o CEP
                                   </label>
@@ -877,6 +929,11 @@ $(document).ready(function(){
 
   $(function () {
  
+    const nameEl = document.querySelector("#name");
+const emailEl = document.querySelector("#email");
+const companyNameEl = document.querySelector("#company-name");
+const messageEl = document.querySelector("#message");
+
     $("#chkcep").change(function() {
       $("#cep").prop('disabled', $(this).prop('checked'));
       $("#address").prop('disabled', !$(this).prop('checked'));
@@ -1012,6 +1069,25 @@ $('input[name="cep"]').mask('00000-000');
    //bindDatePicker();
  });
 
+ // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
  $("#cpf").focusout(function(){
       $('input[name="cpf"]').val( this.value.toUpperCase() );
 			//Início do Comando AJAX
@@ -1146,6 +1222,14 @@ if (cep != "") {
   return;
 };
 });
+
+function reset() {
+  nameEl = "";
+  emailEl = "";
+  companyNameEl = "";
+  messageEl = "";
+  document.querySelector(".name-error").innerText = "";
+}
 
 // $("#_cep").focusout(function(){
 //       $('input[name="_cep"]').val( this.value.toUpperCase() );
