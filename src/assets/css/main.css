@@ -1667,6 +1667,8 @@ textarea:focus{
 }
 .contain form label {
   display: block;
+  font-size: small;
+  margin: auto .5em;
 }
 section .contain p {
   padding: .8rem .8rem;
@@ -1682,7 +1684,7 @@ section .contain p {
 .contain form button,
 .contain form .submit-btn,
 .contain form .form-input,
-.contain form .form-select
+.contain form .form-select,
 .contain form textarea {
   padding: .8em;
 }

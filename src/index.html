@@ -411,16 +411,19 @@
               <h4 class="form-headline">Nos envie sua menssagem</h4>
               <form id="submit-form" action="">
                 <p>
-                  <input id="name" class="form-input" type="text" placeholder="Seu Name*">
+                  <label for="contact-name">Nome</label>
+                  <input id="contact-name" class="form-input" type="text" placeholder="Seu Name*">
                   <small class="name-error"></small>
                 </p>
                 <p>
-                  <input id="email" class="form-input" type="email" placeholder="Seu Email*">
+                  <label for="contact-email">Email</label>
+                  <input id="contact-email" class="form-input" type="email" placeholder="Seu Email*">
                   <small class="name-error"></small>
                 </p>
                 <p class="full-width">
-                    <select id="job" name="user_job" class="form-select" placeholder="Motivo*">
-                        <option value="0">Selecione o motivo</option>
+                    <label for="contact-motivo">Motivo</label>
+                    <select id="contact-motivo" name="user_job" class="form-select" placeholder="Motivo*">
+                        <option value="0">Selecione o assunto</option>
                         <option value="duvida">Dúvida</option>
                         <option value="sugestao">Sugestão</option>
                         <option value="reclamacao">Reclamação</option>
@@ -429,7 +432,8 @@
                   <small></small>
                 </p>
                 <p class="full-width">
-                  <textarea  minlength="20" id="message" cols="30" rows="7" placeholder="Sua Message*" required></textarea>
+                  <label for="contact-message">Mensagem</label>
+                  <textarea  minlength="20" id="contact-message" cols="30" rows="7" placeholder="Sua Message*" required></textarea>
                   <small></small>
                 </p>
                 <p class="full-width">
