@@ -412,17 +412,17 @@
               <form id="submit-form" action="">
                 <p>
                   <label for="contact-name">Nome</label>
-                  <input id="contact-name" class="form-input" type="text" placeholder="Seu Name*">
+                  <input id="contact-name" class="form-input" type="text" placeholder="Seu Name*" required />
                   <small class="name-error"></small>
                 </p>
                 <p>
                   <label for="contact-email">Email</label>
-                  <input id="contact-email" class="form-input" type="email" placeholder="Seu Email*">
+                  <input id="contact-email" name="email" class="form-input" type="email" placeholder="Seu Email*" required />
                   <small class="name-error"></small>
                 </p>
                 <p class="full-width">
-                    <label for="contact-motivo">Motivo</label>
-                    <select id="contact-motivo" name="user_job" class="form-select" placeholder="Motivo*">
+                    <label for="contact-reason">Motivo</label>
+                    <select id="contact-reason" name="contact-reason" class="form-select" placeholder="Motivo*" required>
                         <option value="0">Selecione o assunto</option>
                         <option value="duvida">Dúvida</option>
                         <option value="sugestao">Sugestão</option>
@@ -939,10 +939,10 @@ $(document).ready(function(){
 
   $(function () {
  
-    const nameEl = document.querySelector("#name");
-const emailEl = document.querySelector("#email");
-const companyNameEl = document.querySelector("#company-name");
-const messageEl = document.querySelector("#message");
+    const nameEl = document.querySelector("#contact-name");
+    const emailEl = document.querySelector("#contact-email");
+    const companyNameEl = document.querySelector("#contact-reason");
+    const messageEl = document.querySelector("#contact-message");
 
     $("#chkcep").change(function() {
       $("#cep").prop('disabled', $(this).prop('checked'));
@@ -1232,6 +1232,36 @@ if (cep != "") {
   return;
 };
 });
+
+function checkValidations() {
+  let letters = /^[a-zA-Z\s]*$/;
+  const name = nameEl.value.trim();
+  const email = emailEl.value.trim();
+  const companyName = companyNameEl.value.trim();
+  const message = messageEl.value.trim();
+  if (name === "") {
+     document.querySelector(".name-error").classList.add("error");
+      document.querySelector(".name-error").innerText = "Por favor preencha este campo!";
+  } else {
+    if (!letters.test(name)) {
+      document.querySelector(".name-error").classList.add("error");
+      document.querySelector(".name-error").innerText = "Please enter only characters!";
+    } else {
+      
+    }
+  }
+  if (email === "") {
+     document.querySelector(".name-error").classList.add("error");
+      document.querySelector(".name-error").innerText = "Por favor preencha este campo!";
+  } else {
+    if (!letters.test(name)) {
+      document.querySelector(".name-error").classList.add("error");
+      document.querySelector(".name-error").innerText = "Somente caracteres são permitidos!";
+    } else {
+      
+    }
+  }
+}
 
 function reset() {
   nameEl = "";
