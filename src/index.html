@@ -964,6 +964,7 @@ $(document).ready(function(){
     var phone_val = null;
     var cep_val = null;
     var address_val = null;
+    var address_number_val = null;
     var gender1_val = null;
     var gender_val = $('select#gender option').filter(':selected').text();
     var date_val = $('select#date option').filter(':selected').text();
@@ -1741,11 +1742,12 @@ $(function() {
             phone_val = $('#phone').val();
             cep_val = $('#cep').val();
             address_val = $('#address').val();
+            address_number_val = $('#address-number').val();
             address_city_val = $('#address-city').val();
             address_state_val = $('#address-state').val();
             gender1_val = $('form input[type=radio]:checked').val();
             gender_val = $('select#gender option').filter(':selected').val();
-            date_val = $('select#date option').filter(':selected').val() + '/' + $('select#month option').filter(':selected').val() + '/' + $('select#year option').filter(':selected').val() ;
+            date_val = $('select#month option').filter(':selected').val() + '/' + $('select#date option').filter(':selected').val() + '/' + $('select#year option').filter(':selected').val() ;
             account_name_val = $('#account_name').val();
             plate_number_val = $('#plate_number').val();
 
@@ -1755,6 +1757,7 @@ $(function() {
             $('#phone-val').text(phone_val);
             $('#cep-val').text(cep_val);
             $('#address-val').text(address_val);
+            $('#address-number-val').text(address_number_val);
             $('#address-city-val').text(address_city_val);
             $('#address-state-val').text(address_state_val);
             $('#gender-val').text(gender_val);
@@ -1776,33 +1779,30 @@ $(function() {
 
           let payload = {
               "name": fullname_val, // document.querySelector("#fullname"),
-              "dob": date_val,
+              "dob": new Date(date_val).toISOString(),
               "gender": gender_val,
-              "currentAddress": "string",
-              "permanentAddress": "string",
-              "mobilePhone": "string",
-              "city": "string",
-              "nationality": "string",
-              "pinCode": "string",
-              "createdOn": "2023-07-17T02:20:25.604Z",
-              "personId": 0,
+              "currentAddress": address_city_val,
+              "permanentAddress": "",
+              "mobilePhone": "",
+              "city": address_city_val,
+              "nationality": "",
+              "pinCode": "",
+              "createdOn": new Date().toJSON(),
               "person": {
                 "name": fullname_val,
                 "documentNumber": cpf_val,
                 "phone": phone_val,
                 "email": email_val,
                 "gender": gender_val,
-                "dob": "2023-07-17T02:20:25.604Z",
-                "createdAt": new Date().toJSON(),
-                "driverId": 0
+                "dob": new Date(date_val).toJSON(),
+                "createdAt": new Date().toJSON()
               },
-              "addressId": 0,
               "address": {
                 "street": address_val,
                 "city": address_city_val,
                 "state": address_state_val,
                 "zipCode": parseInt(cep_val.replace('-', '')),
-                "pin": "string"
+                "pin": ""
               }
             };
 
