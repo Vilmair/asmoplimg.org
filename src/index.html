@@ -845,40 +845,40 @@
                               <section class="step-tab-panel" data-step="step4">
                                   <fieldset class="inner">
                                     <h3>Resumo</h3>
-                            <div class="form-row table-responsive">
-                              <table class="table">
-                                <tbody>
-                                  <tr class="space-row">
-                                    <th>Nome Completo:</th>
-                                    <td id="fullname-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Email:</th>
-                                    <td id="email-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Telefone</th>
-                                    <td id="phone-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Endereço:</th>
-                                    <td id="address-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Genero:</th>
-                                    <td id="gender-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Veículo:</th>
-                                    <td id="account-name-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Placa:</th>
-                                    <td id="plate_number-val"></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
+                                    <div class="form-row table-responsive">
+                                      <table class="table">
+                                        <tbody>
+                                          <tr class="space-row">
+                                            <th>Nome Completo:</th>
+                                            <td id="fullname-val"></td>
+                                          </tr>
+                                          <tr class="space-row">
+                                            <th>Email:</th>
+                                            <td id="email-val"></td>
+                                          </tr>
+                                          <tr class="space-row">
+                                            <th>Telefone</th>
+                                            <td id="phone-val"></td>
+                                          </tr>
+                                          <tr class="space-row">
+                                            <th>Endereço:</th>
+                                            <td id="address-val"></td>
+                                          </tr>
+                                          <tr class="space-row">
+                                            <th>Genero:</th>
+                                            <td id="gender-val"></td>
+                                          </tr>
+                                          <tr class="space-row">
+                                            <th>Veículo:</th>
+                                            <td id="account-name-val"></td>
+                                          </tr>
+                                          <tr class="space-row">
+                                            <th>Placa:</th>
+                                            <td id="plate_number-val"></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
                                   </fieldset>
                               </section>
                           </div>
@@ -1806,14 +1806,62 @@ $(function() {
             })
             .finally(res => { console.log("promise finally") });
 
-            console.log('onFinishing', payload);
+            console.log('onFinishing', form.valid());
             return form.valid();
         },
         onFinished: function (event, currentIndex)
         {
             //alert('Sumited');
         },
-        onFinish: function () { alert('completo'); }
+        onFinish: function () {
+          let payload = {
+              "name": fullname_val, // document.querySelector("#fullname"),
+              "dob": date_val,
+              "gender": gender_val,
+              "currentAddress": "string",
+              "permanentAddress": "string",
+              "mobilePhone": "string",
+              "city": "string",
+              "nationality": "string",
+              "pinCode": "string",
+              "createdOn": "2023-07-17T02:20:25.604Z",
+              "personId": 0,
+              "person": {
+                "name": fullname_val,
+                "documentNumber": cpf_val,
+                "phone": phone_val,
+                "email": email_val,
+                "gender": gender_val,
+                "dob": "2023-07-17T02:20:25.604Z",
+                "createdAt": "2023-07-17T02:20:25.604Z",
+                "driverId": 0
+              },
+              "addressId": 0,
+              "address": {
+                "street": address_val,
+                "city": address_city_val,
+                "state": address_state_val,
+                "zipCode": parseInt(cep_val.replace('-', '')),
+                "pin": "string"
+              }
+            };
+            postPromise(payload)
+            .then((data) => {
+              console.log("promise resolved", data);
+            })
+            .catch((err) => {
+              console.log("promise rejected", err);
+            })
+            .finally(res => { 
+              console.log("promise finally");
+              alert('Seu cadastro foi finalizado!');
+              //https://laracasts.com/discuss/channels/general-discussion/how-to-hide-a-bootstrap-5-modal-window-in-pure-javascript
+              //https://www.geeksforgeeks.org/how-to-hide-bootstrap-modal-with-javascript/
+              $('#staticBackdrop').modal('hide');
+            });
+
+            console.log('onFinishing', form.valid()); 
+        }
     });
 
     function postPromise(url, body) {
