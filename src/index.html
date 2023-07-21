@@ -1814,6 +1814,9 @@ $(function() {
             //alert('Sumited');
         },
         onFinish: function () {
+
+          let url = "https://driverconnect.azurewebsites.net/api/Customer";
+
           let payload = {
               "name": fullname_val, // document.querySelector("#fullname"),
               "dob": date_val,
@@ -1845,7 +1848,8 @@ $(function() {
                 "pin": "string"
               }
             };
-            postPromise(payload)
+
+            postPromise(url, payload)
             .then((data) => {
               console.log("promise resolved", data);
             })
@@ -1857,6 +1861,7 @@ $(function() {
               alert('Seu cadastro foi finalizado!');
               //https://laracasts.com/discuss/channels/general-discussion/how-to-hide-a-bootstrap-5-modal-window-in-pure-javascript
               //https://www.geeksforgeeks.org/how-to-hide-bootstrap-modal-with-javascript/
+              //https://www.delftstack.com/howto/javascript/close-modal-javascript/
               $('#staticBackdrop').modal('hide');
             });
 
