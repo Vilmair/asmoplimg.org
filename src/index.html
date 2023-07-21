@@ -1417,7 +1417,8 @@ function recuperarCEP(input) {
                 console.log('viacep.com.br', data);
                 $("#address").val(data.logradouro);
                 $("#address-city").val(data.localidade);
-                $("#address-state").val(data.uf == 'MG' ? 'Minas Gerais' : data.uf);
+                $("#address-state").val(data.uf);
+                $("#address-state").text(data.uf == 'MG' ? 'Minas Gerais' : data.uf);
             }
         );
     }
@@ -1781,7 +1782,7 @@ $(function() {
               "name": fullname_val, // document.querySelector("#fullname"),
               "dob": new Date(date_val).toISOString(),
               "gender": gender_val,
-              "currentAddress": address_city_val,
+              "currentAddress": address_number_val,
               "permanentAddress": "",
               "mobilePhone": "",
               "city": address_city_val,
