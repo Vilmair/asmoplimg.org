@@ -1806,8 +1806,8 @@ $(function() {
               }
             };
 
-            console(url, payload);
-            
+            console.log(url, payload);
+
             postPromise(url, payload)
             .then((data) => {
               console.log("promise resolved", data);
