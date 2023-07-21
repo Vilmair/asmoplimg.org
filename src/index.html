@@ -1208,6 +1208,39 @@ const getData = (resource) => {
   });
 };
 
+function getPromise(URL) {
+    let promise = new Promise(function (resolve, reject) {
+    let req = new XMLHttpRequest();
+    req.open("GET", URL);
+    req.onload = function () {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        reject("There is an Error!");
+      }
+    };
+    req.send();
+  });
+  return promise;
+};
+
+function postPromise(url, body) {
+    let promise = new Promise(function (resolve, reject) {
+    let req = new XMLHttpRequest();
+    req.open("POST", url);
+    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    req.onload = function () {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        reject("There is an Error!");
+      }
+    };
+    req.send(JSON.stringify(body));
+  });
+  return promise;
+};
+
 //https://www.modernjsbyexample.net/book/005-asynchronous-tooling
 //https://www.atatus.com/blog/fetch-api-replacement-for-xmlhttprequest-xhr/
 getData("https://driverconnect.azurewebsites.net/api/Customer/GetAll?PageNumber=1&PageSize=10")
@@ -1440,7 +1473,7 @@ function checkValidations() {
       
     }
   }
-}
+};
 
 function reset() {
   nameEl = "";
@@ -1448,23 +1481,7 @@ function reset() {
   companyNameEl = "";
   messageEl = "";
   document.querySelector(".name-error").innerText = "";
-}
-
-function getPromise(URL) {
-  let promise = new Promise(function (resolve, reject) {
-    let req = new XMLHttpRequest();
-    req.open("GET", URL);
-    req.onload = function () {
-      if (req.status == 200) {
-        resolve(req.response);
-      } else {
-        reject("There is an Error!");
-      }
-    };
-    req.send();
-  });
-  return promise;
-}
+};
 
 // $("#_cep").focusout(function(){
 //       $('input[name="_cep"]').val( this.value.toUpperCase() );
@@ -1780,6 +1797,7 @@ $(function() {
                 "pin": "string"
               }
             };
+            postPromise(payload);
             console.log('onFinishing', payload);
             return form.valid();
         },
@@ -1789,6 +1807,23 @@ $(function() {
         },
         onFinish: function () { alert('completo'); }
     });
+
+    function postPromise(url, body) {
+    let promise = new Promise(function (resolve, reject) {
+    let req = new XMLHttpRequest();
+    req.open("POST", url);
+    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    req.onload = function () {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        reject("There is an Error!");
+      }
+    };
+    req.send(JSON.stringify(body));
+  });
+  return promise;
+};
 
     $('.forward').click(function(){
       console.log('forward');
