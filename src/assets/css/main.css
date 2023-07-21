@@ -638,6 +638,10 @@ input[type="checkbox"] {
 	border:1px solid #d41b1b;
 }
 
+.align-items-center {
+  align-self: center;
+}
+
 .radio-container {
   display: inline-block;
   position: relative;

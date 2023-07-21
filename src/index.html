@@ -798,7 +798,7 @@
                                   <div class="row">
                                     <div class="col-md-6 mb-2">
                                       <label for="plate_number">Placa</label>
-                                      <input type="text" placeholder="Informe a placa" class="form-control form-control-lg input-step-2" id="plate_number" name="plate_number" />
+                                      <input type="text" placeholder="Informe a placa" class="form-control form-control-lg input-step-2" id="plate_number" name="plate_number" required>
                                       <span><i class="zmdi zmdi-search"></i></span>
                                     </div>
                                     <div class="col-md-6 mb-2">
@@ -1413,10 +1413,11 @@ if (cep != "") {
 
 function checkValidations() {
   let letters = /^[a-zA-Z\s]*$/;
-  const name = nameEl.value.trim();
-  const email = emailEl.value.trim();
-  const companyName = companyNameEl.value.trim();
-  const message = messageEl.value.trim();
+  const name = fullname_val.trim();
+  const email = email_val.trim();
+  con
+  //const companyName = companyNameEl.value.trim();
+  //const message = messageEl.value.trim();
   if (name === "") {
      document.querySelector(".name-error").classList.add("error");
       document.querySelector(".name-error").innerText = "Por favor preencha este campo!";
@@ -1677,11 +1678,14 @@ $(function() {
     $("#form-total").steps({
         headerTag: "h2",
         bodyTag: "section",
+        buttonSelector:'button',
         transitionEffect: "fade",
         enableAllSteps: false,
         autoFocus: true,
         transitionEffectSpeed: 500,
         titleTemplate : '<div class="title">#title#</div>',
+        stepSelector:'.step-steps > li',
+        errorClass:'error',
         labels: {
             previous : '<i class="zmdi zmdi-chevron-left"></i>',
             next : '<i class="zmdi zmdi-chevron-right"></i>',
@@ -1692,11 +1696,26 @@ $(function() {
             console.log(event, currentIndex, newIndex);
             form.validate().settings.ignore = ":disabled,:hidden";
             //checkValidations();
+
+            var fv = $('#form-register').data('formValidation'), // FormValidation instance
+                // The current step container
+                $container = $('#form-register').find('section[data-step="' + currentIndex +'"]');
+
+            console.log(fv);
+
+            // Validate the container
+            //fv.validateContainer($container);
+
             if ( newIndex === 3 ) {
                 $('.steps li').addClass('forward');
             } else {
                 $('.steps li').removeClass('step-2');
-            }
+            };
+
+            // If user click on "Previous" button, we just normally let he/she goes
+            if (newIndex < currentIndex) {
+                return true;
+            };
 
             fullname_val = $('#fullname').val();
             cpf_val = $('#cpf').val();
