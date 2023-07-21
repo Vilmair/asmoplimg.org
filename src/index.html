@@ -1808,17 +1808,17 @@ $(function() {
             postPromise(url, payload)
             .then((data) => {
               console.log("promise resolved", data);
+              alert('Seu cadastro foi finalizado!');
+              //https://laracasts.com/discuss/channels/general-discussion/how-to-hide-a-bootstrap-5-modal-window-in-pure-javascript
+              //https://www.geeksforgeeks.org/how-to-hide-bootstrap-modal-with-javascript/
+              //https://www.delftstack.com/howto/javascript/close-modal-javascript/
+              $('#staticBackdrop').modal('hide');
             })
             .catch((err) => {
               console.log("promise rejected", err);
             })
             .finally(res => { 
               console.log("promise finally");
-              alert('Seu cadastro foi finalizado!');
-              //https://laracasts.com/discuss/channels/general-discussion/how-to-hide-a-bootstrap-5-modal-window-in-pure-javascript
-              //https://www.geeksforgeeks.org/how-to-hide-bootstrap-modal-with-javascript/
-              //https://www.delftstack.com/howto/javascript/close-modal-javascript/
-              $('#staticBackdrop').modal('hide');
             });
         },
         onFinish: function () {
