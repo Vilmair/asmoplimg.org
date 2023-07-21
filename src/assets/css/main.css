@@ -1538,6 +1538,16 @@ input[type="checkbox"] {
 	.form-register .steps li.current::after {
 		left: 28%;
 	}
+  #form-register input[type="text"]:hover,
+  #form-register input[type="email"]:hover,
+  #form-register input[type="tel"]:hover,
+  #form-register input[type="url"]:hover,
+  #form-register textarea:hover {
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid #aaa;
+  }
 	.inner .form-row .form-holder .ui-datepicker-trigger {
 		right: 0;
 	}
@@ -1571,9 +1581,87 @@ input[type="checkbox"] {
       padding-bottom: 0.5rem;
   }
 }
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print,
+     (-o-min-device-pixel-ratio: 5/4),
+     (-webkit-min-device-pixel-ratio: 1.25),
+     (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
 
-.align-items-center {
-  align-self: center;
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   https://codepen.io/wavilap/pen/MXrjQP
+   ========================================================================== */
+
+   @media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
 
 .align-items-center .form-check {
@@ -1673,7 +1761,7 @@ textarea:focus{
   grid-template-columns: 1fr 1fr;
   grid-gap: .1em;
 }
-.contain form label {
+.contain form label, note {
   display: block;
   font-size: small;
   margin: auto .5em;
@@ -1710,4 +1798,10 @@ section .contain p {
 }
 .error {
   color: #ec1c24;
+}
+.note {
+  display: block;
+  font-size: small;
+  font-style: italic;
+  padding: .3em !important;
 }

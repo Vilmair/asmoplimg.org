@@ -90,7 +90,7 @@
                   <li>Armazena as informações por tempo necessário em banco de dados habilitado</li>
                   <li>Está amparado pela lei geral de proteção de dados (LGPD)</li> 
                 </ul>
-                
+                <span class="note">Nota: O sistema de integração com as forças de Segurança Pública, conforme ilustração, só será ativado mediante convênio e interesse das partes, bem como a tecnologia de identificação facial.</span>
               </p>
               <button class="btn btn-success mt-4 mx-4" id="button" type="button" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop">Cadastre-se</button>
             </div>
@@ -450,7 +450,12 @@
                   <small></small>
                 </p>
                 <p class="full-width">
-                  <input type="checkbox" id="checkbox" name="checkbox" checked /> <span> Aceito receber comunicações por email sobre a Asmopli-MG.</span>
+                  <input type="checkbox" id="checkbox" name="checkbox" checked /> 
+                  <span> Aceito receber comunicações por email sobre a Asmopli-MG.</span>
+                  <section>
+                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> 
+                    <label for="acceptTerms">I agree with the Terms and Conditions.</label>
+                  </section> 
                 </p>
                 <p class="full-width">
                   <button type="submit" class="submit-btn" value="Submit" onclick="checkValidations()">Enviar</button>
@@ -928,6 +933,15 @@
 var validacep = /^[0-9]{8}$/;
 
 $(document).ready(function(){
+
+  function adjustIframeHeight() {
+        var $body   = $('body'),
+            $iframe = $body.data('iframe.fv');
+        if ($iframe) {
+            // Adjust the height of iframe
+            $iframe.height($body.height());
+        }
+    };
 
   console.log($("#cpf")[0].value, $("#cpf"));
   console.log('CEP', $("#cep")[0].value, $("#cep")[0]);
@@ -1676,6 +1690,7 @@ $(function() {
         },
         onStepChanging: function (event, currentIndex, newIndex) { 
             console.log(event, currentIndex, newIndex);
+            form.validate().settings.ignore = ":disabled,:hidden";
             //checkValidations();
             if ( newIndex === 3 ) {
                 $('.steps li').addClass('forward');
