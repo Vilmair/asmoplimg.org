@@ -694,7 +694,7 @@
                                       </div>
                                       <div class="col-sm-2 mb-2">
                                         <label for="address-number">Número</label>
-                                        <input type="text" placeholder="Informe o número do endereço" class="form-control form-control-lg" id="address-number" name="address-number" />
+                                        <input type="text" placeholder="Informe o número do endereço" class="form-control form-control-lg" id="address-number" name="address-number" required/>
                                       </div>
                                       <div class="col-sm-3 mb-2">
                                         <label for="address-extend">Complemento</label>
@@ -1766,52 +1766,12 @@ $(function() {
         {
             form.validate().settings.ignore = ":disabled";
             
-            let payload = {
-              "name": fullname_val, // document.querySelector("#fullname"),
-              "dob": date_val,
-              "gender": gender_val,
-              "currentAddress": "string",
-              "permanentAddress": "string",
-              "mobilePhone": "string",
-              "city": "string",
-              "nationality": "string",
-              "pinCode": "string",
-              "createdOn": "2023-07-17T02:20:25.604Z",
-              "personId": 0,
-              "person": {
-                "name": fullname_val,
-                "documentNumber": cpf_val,
-                "phone": phone_val,
-                "email": email_val,
-                "gender": gender_val,
-                "dob": "2023-07-17T02:20:25.604Z",
-                "createdAt": "2023-07-17T02:20:25.604Z",
-                "driverId": 0
-              },
-              "addressId": 0,
-              "address": {
-                "street": address_val,
-                "city": address_city_val,
-                "state": address_state_val,
-                "zipCode": parseInt(cep_val.replace('-', '')),
-                "pin": "string"
-              }
-            };
-            postPromise(payload)
-            .then((data) => {
-              console.log("promise resolved", data);
-            })
-            .catch((err) => {
-              console.log("promise rejected", err);
-            })
-            .finally(res => { console.log("promise finally") });
-
             console.log('onFinishing', form.valid());
             return form.valid();
         },
         onFinished: function (event, currentIndex)
         {
-            //alert('Sumited');
+            alert('Sumited');
         },
         onFinish: function () {
 
@@ -1865,7 +1825,7 @@ $(function() {
               $('#staticBackdrop').modal('hide');
             });
 
-            console.log('onFinishing', form.valid()); 
+            console.log('onFinish', form.valid()); 
         }
     });
 
