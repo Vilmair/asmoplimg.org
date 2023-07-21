@@ -68,10 +68,30 @@
       <section class="pt-8 py-lg-0" id="novo">
         <div class="container-xxl">
           <div class="row align-items-center min-vh-lg-100">
-            <div class="col-lg order-lg-1 text-center"><img class="img-fluid" src="assets/img/gallery/driver.webp" alt="driver.jpg" /></div>
+            <div class="col-lg order-lg-1 text-center">
+              <div class="ratio ratio-16x9">
+                <video class="w-100" controls="controls">
+                  <source src="assets/video/tut.video.mp4" type="video/mp4">
+                  <object data="" width="320" height="240">
+                  <embed class="w-100" src="assets/video/tut.video.mp4">
+                  </object>
+                </video>
+              </div>
+            </div>
             <div class="col-lg mt-5 mt-lg-0">
-              <h3 class="mx-4">A associação existe para sua segurança e comodidade motorista</h3>
-              <p class="mt-4 fs-3 fs-md-4 lh-sm">A Asmopli MG continua trabalhando para  melhor atender a todos os associados e parceiros. Queremos garantir um trabalho de qualidade com beneficios multiplos para todos.</p>
+              <p class="fs-3">
+                <h3 class="display-5">Driver Connect</h3>
+                <h4>O sistema de segurança Driver Connect é voltado para os operadores de transporte por aplicativos multiplataforma</h4>
+                <ul>
+                  <li>Registra os eventos: antes, durante e depois da solicitação de serviços</li>
+                  <li>Encaminha de forma automática os registros fotográficos para Cloud Server</li>
+                  <li>Excluem todos os arquivos gerados da memória do Smartfone em 01 segundo</li>
+                  <li>Possui sistema de Criptografia de ponta a ponta</li>
+                  <li>Armazena as informações por tempo necessário em banco de dados habilitado</li>
+                  <li>Está amparado pela lei geral de proteção de dados (LGPD)</li> 
+                </ul>
+                
+              </p>
               <button class="btn btn-success mt-4 mx-4" id="button" type="button" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop">Cadastre-se</button>
             </div>
           </div>
@@ -123,18 +143,11 @@
           <div class="container-xxl">
             <div class="row align-items-center">
               <div class="col-md-5">
-                <h1 class="display-5 font-cursive">Driver Connect</h1>
-                <p class="fs-4">A plataforma Driver Connect permite o uso da tecnologia para o aprimoramento da segurança nas viagens, trazendo mais tranquilidade a todos os embarcados.</p>
+                <h3 class="mx-4">A associação existe para sua segurança e comodidade motorista</h3>
+                <p class="mt-4 fs-3 fs-md-4 lh-sm">A Asmopli MG continua trabalhando para  melhor atender a todos os associados e parceiros. Queremos garantir um trabalho de qualidade com beneficios multiplos para todos.</p>
               </div>
               <div class="col-md-7 col-xl-5 offset-xl-1">
-                <div class="ratio ratio-16x9">
-                  <video class="w-100" controls="controls">
-                    <source src="assets/video/tut.video.mp4" type="video/mp4">
-                    <object data="" width="320" height="240">
-                    <embed class="w-100" src="assets/video/tut.video.mp4">
-                    </object>
-                  </video>
-                </div>
+                <img class="img-fluid" src="assets/img/gallery/driver.webp" alt="driver.jpg" />
               </div>
             </div>
           </div><!-- end of .container-->
@@ -522,131 +535,92 @@
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
                                 <span class="step-text">Identificação</span>
                               </h2>
-                              <section class="section-container">
-                                  <div class="inner">
-                            <div class="row g-3">
-                              <div class="col-sm-9 mb-2">
-                                <label for="first_name">Nome Completo</label>
-                                <input type="text" placeholder="ex: Laura" class="form-control form-control-lg" id="first_name" name="first_name" required/>
-                              </div>
-                              <div class="col-sm-3 mb-2">
-                                <label for="cpf">CPF</label>
-                                <input type="text" placeholder="000.000.000-00" class="form-control form-control-lg" id="cpf" name="cpf" data-mask="000.000.000-00" required />
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-8 mb-2">
-                                <label for="email">Email</label>
-                                <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" required/>
-                              </div>
-                              <div class="col-sm-4 mb-2">
-                                <label for="phone">Telefone</label>
-                                <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="phone" name="phone" data-mask="99 99999 9999" required />
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-6 mb-2">
-                                <label for="date" class="special-label">Data de Nascimento</label>
-                                <div class="input-group date" data-date-format="dd.mm.yyyy">
-                                  <select name="date" id="date" class="form-select select me-3">
-                                  </select>
-                                  <select name="month" id="month" class="form-select select" >
-                                    <option value="Jan" selected>Janeiro</option>
-                                    <option value="Fev">Fevereiro</option>
-                                    <option value="Mar">Março</option>
-                                    <option value="Abr">Abril</option>
-                                    <option value="Mai">Maio</option>
-                                    <option value="Jun">Junho</option>
-                                    <option value="Jul">Julho</option>
-                                    <option value="Ago">Agosto</option>
-                                    <option value="Set">Setembro</option>
-                                    <option value="Out">Outubro</option>
-                                    <option value="Nov">Novembro</option>
-                                    <option value="Dez">Dezembro</option>
-                                  </select>
-                                  <select name="year" id="year" class="form-select select ms-3">
-                                  </select>
-                              </div>
-                              </div>
-                              <div class="col-md-6 mb-2">
-                                <label for="gender">Sexo</label>
-                                <select class="form-select select" id="gender" name="gender">
-                                  <option value="1" disabled>Genero</option>
-                                  <option value="2">Feminino</option>
-                                  <option value="3">Masculino</option>
-                                  <option value="4">Não informar</option>
-                                </select>
-                              </div>
-                            </div>
-                            <fieldset class="form-group border p-3 mb-2" style="display:none">
-                            <legend class="w-auto px-2">User's Credentials</legend>                            
-                            <div class="row">
-                              <div class="col-sm-12 mb-2 form-3-box text-center wow fadeInUp">
-                                  <div class="d-md-flex justify-content-start align-items-center py-2">
-                                    <label class="me-4 mt-3" for="gender">Sexo</label>
-                  
-                                    <div class="form-check form-check-inline mt-4 b-0 me-4">
-                                      <input class="form-check-input" type="radio" name="femaleGender" id="femaleGender" value="option1" />
-                                      <label class="form-check-label" for="femaleGender">Feminino</label>
+                              <section class="section-container step-tab-panel" data-step="step1">
+                                  <fieldset class="inner">
+                                    <!-- <legend>
+                                      <span class="step-heading">Personal Informaltion: </span>
+                                      <span class="step-number">Step 1 / 4</span>
+                                    </legend> -->
+                                    <div class="form-group row g-3">
+                                      <div class="col-sm-9 mb-2">
+                                        <label for="fullname">Nome Completo</label>
+                                        <input type="text" placeholder="ex: Laura" class="form-control form-control-lg" id="fullname" name="fullname" required/>
+                                      </div>
+                                      <div class="col-sm-3 mb-2">
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" placeholder="000.000.000-00" class="form-control form-control-lg" id="cpf" name="cpf" data-mask="000.000.000-00" required />
+                                      </div>
                                     </div>
-                  
-                                    <div class="form-check form-check-inline mt-4 mb-0 me-4">
-                                      <input class="form-check-input" type="radio" name="maleGender" id="maleGender" value="option2" />
-                                      <label class="form-check-label" for="maleGender">Masculino</label>
+                                    <div class="form-group row">
+                                      <div class="col-sm-8 mb-2">
+                                        <label for="email">Email</label>
+                                        <input type="email" placeholder="ex: example@email.com" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" class="form-control form-control-lg email input-step-2-1" id="email" name="email" required/>
+                                      </div>
+                                      <div class="col-sm-4 mb-2">
+                                        <label for="phone">Telefone</label>
+                                        <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="phone" name="phone" data-mask="99 99999 9999" required />
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <div class="col-md-6 mb-2">
+                                        <label for="date" class="special-label">Data de Nascimento</label>
+                                        <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                          <select name="date" id="date" class="form-control-lg form-select select me-3">
+                                          </select>
+                                          <select name="month" id="month" class="form-control-lg form-select select" >
+                                            <option value="01" selected>Janeiro</option>
+                                            <option value="02">Fevereiro</option>
+                                            <option value="03">Março</option>
+                                            <option value="04">Abril</option>
+                                            <option value="05">Maio</option>
+                                            <option value="06">Junho</option>
+                                            <option value="07">Julho</option>
+                                            <option value="08">Agosto</option>
+                                            <option value="09">Setembro</option>
+                                            <option value="10">Outubro</option>
+                                            <option value="11">Novembro</option>
+                                            <option value="12">Dezembro</option>
+                                          </select>
+                                          <select name="year" id="year" class="form-control-lg form-select select ms-3">
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6 mb-2">
+                                        <label for="gender">Sexo</label>
+                                        <select class="form-control-lg form-select select" id="gender" name="gender">
+                                          <option value="0" disabled>Genero</option>
+                                          <option value="F">Feminino</option>
+                                          <option value="M">Masculino</option>
+                                          <option value="N">Não informar</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="form-group border p-3 mb-2" style="display:none">
+                                    <legend class="w-auto px-2">User's Credentials</legend>                            
+                                      <div class="row">
+                                        <div class="col-sm-12 mb-2 form-3-box text-center wow fadeInUp">
+                                            <div class="d-md-flex justify-content-start align-items-center py-2">
+                                              <label class="me-4 mt-3" for="gender">Sexo</label>
+                            
+                                              <div class="form-check form-check-inline mt-4 b-0 me-4">
+                                                <input class="form-check-input" type="radio" name="femaleGender" id="femaleGender" value="option1" />
+                                                <label class="form-check-label" for="femaleGender">Feminino</label>
+                                              </div>
+                            
+                                              <div class="form-check form-check-inline mt-4 mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="maleGender" id="maleGender" value="option2" />
+                                                <label class="form-check-label" for="maleGender">Masculino</label>
+                                              </div>
+
+                                              <div class="form-check form-check-inline mt-4 mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="nonGender" id="nonGender" value="option3" />
+                                                <label class="form-check-label" for="nonGender">Não informar</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
                                     </div>
 
-                                    <div class="form-check form-check-inline mt-4 mb-0 me-4">
-                                      <input class="form-check-input" type="radio" name="nonGender" id="nonGender" value="option3" />
-                                      <label class="form-check-label" for="nonGender">Não informar</label>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                            </fieldset>
-                            <div class="row">
-                              <div class="col-sm-3 mb-2">
-                                <label for="cep">CEP</label>
-                                <input type="text" class="form-control form-control-lg" placeholder="Entre com o CEP" style="text-align:end; padding-right:1em;" id="cep" name="cep" />
-                              </div>
-                              <div class="col-sm-4 mb-2 align-items-center">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" id="chkcep" /><!--https://wakeupandcode.com/forms-and-fields-in-asp-net-core/-->
-                                  <label class="form-check-label" for="chkcep">
-                                    Não sei o CEP
-                                  </label>
-                                </div>
-                              </div>
-                              <div class="col-sm-5 mb-2" style="visibility:hidden">
-                                <label for="phone">Phone Number</label>
-                                <input type="text" placeholder="+1 777-888-8888" class="form-control form-control-lg" id="phone" name="phone" />
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-7 mb-2">
-                                <label for="address">Endereço</label>
-                                <input type="text" placeholder="Logradouro" class="form-control form-control-lg" id="address" name="address" disabled="true" />
-                                <span><i class="zmdi zmdi-pin"></i></span>
-                              </div>
-                              <div class="col-sm-2 mb-2">
-                                <label for="address-number">Número</label>
-                                <input type="text" placeholder="Informe o número do endereço" class="form-control form-control-lg" id="address-number" name="address-number" />
-                              </div>
-                              <div class="col-sm-3 mb-2">
-                                <label for="address-extend">Complemento</label>
-                                <input type="text" placeholder="Informe o complemento do endereço" class="form-control form-control-lg" id="address-extend" name="address-extend" />
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-sm-8 mb-2">
-                                <label for="address-city">Cidade</label>
-                                <input type="text" placeholder="Cidade" class="form-control form-control-lg" id="address-city" name="address-city" disabled="true" />
-                              </div>
-                              <div class="col-sm-4 mb-2">
-                                <label for="address-state">Estado</label>
-                                <input type="text" placeholder="Estado" class="form-control form-control-lg" id="address-state" name="address-state" disabled="true"/>
-                                <!-- <span><i class="zmdi zmdi-pin"></i></span> -->
-                              </div>
-                            </div>
                             <div class="row" style="display:none">
                               <div class='col-sm-3 mb-2'>                                   
                                     <!-- Datepicker as text field -->         
@@ -671,187 +645,201 @@
                               <div class="col-md-6 mb-4">
               
                                 <select class="form-select select">
-                                  <option value="1" disabled>Sexo</option>
-                                  <option value="2">Feminino</option>
-                                  <option value="3">Masculino</option>
-                                  <option value="4">Não informar</option>
+                                  <option value="0" disabled>Sexo</option>
+                                  <option value="F">Feminino</option>
+                                  <option value="M">Masculino</option>
+                                  <option value="N">Não informar</option>
                                 </select>
               
                               </div>
                             </div>
 
-                            <div class="row">
-
-                            </div>
-                          </div>
+                                  </fieldset>
                               </section>
-                        <!-- SECTION 2 -->
+                              <!-- SECTION 2 -->
                               <h2>
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
-                                <span class="step-text">Veículo</span>
+                                <span class="step-text">Endereço</span>
                               </h2>
-                              <section>
-                                  <div class="inner">
-                            <div class="row">
-                              <div class="col-md-6 mb-2">
-                                <label for="plate_number">Placa</label>
-                                <input type="text" placeholder="Informe a placa" class="form-control form-control-lg input-step-2" id="plate_number" name="plate_number" />
-                                <span><i class="zmdi zmdi-search"></i></span>
-                              </div>
-                              <div class="col-md-6 mb-2">
-                                <label for="branch">Marca</label>
-                                <input type="text" placeholder="Volkswagen" name="branch" class="form-control form-control-lg input-step-2-1" id="branch" />
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-6 mb-2">
-                                <label for="model">Modelo</label>
-                                <input type="text" placeholder="Informe o modelo" class="form-control form-control-lg input-step-2" id="model" name="model" />                                
-                              </div>
-                              <div class="col-md-6 mb-2">
-                                <label for="owner">Propriedade</label>
-                                <select class="form-select select" name="gender">
-                                  <option value="1" disabled>Veículo</option>
-                                  <option value="2">Próprio</option>
-                                  <option value="3">Alugado</option>
-                                  <option value="3">Outro ou Não informar</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-6 mb-2">
-                                <label for="year-vehicle">Ano Fabricação</label>
-                                <select name="year" id="year-vehicle" class="form-select select">
-                                </select>
-                              </div>
-                              <div class="col-md-6 mb-2">
-                                <label for="color_name">Cor</label>
-                                <input type="text" name="color_name" class="form-control form-control-lg" id="color_name" placeholder="Informe a cor" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" />
-                              </div>
-                            </div>
-                            <div class="form-row" style="display:none;">
-                              <div class="form-holder form-holder-2">
-                                <label for="account_number">Account Number:</label>
-                                <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number" />
-                                <span class="card"><i class="zmdi zmdi-card"></i></span>
-                              </div>
-                            </div>
-                            <div class="row" style="margin-bottom: 18px;display:none;">
-                              <div class="input-group mb-3">
-                              <label class="input-group-text" for="job">Job Role</label>
-                              <select id="job" name="user_job" class="form-select">
-                                <optgroup label="Web">
-                                  <option value="frontend_developer">Front-End Developer</option>
-                                  <option value="php_developor">PHP Developer</option>
-                                  <option value="python_developer">Python Developer</option>
-                                  <option value="rails_developer"> Rails Developer</option>
-                                  <option value="web_designer">Web Designer</option>
-                                  <option value="WordPress_developer">WordPress Developer</option>
-                                </optgroup>
-                                <optgroup label="Mobile">
-                                  <option value="Android_developer">Androild Developer</option>
-                                  <option value="iOS_developer">iOS Developer</option>
-                                  <option value="mobile_designer">Mobile Designer</option>
-                                </optgroup>
-                                <optgroup label="Business">
-                                  <option value="business_owner">Business Owner</option>
-                                  <option value="freelancer">Freelancer</option>
-                                </optgroup>
-                                <optgroup label="Other">
-                                  <option value="secretary">Secretary</option>
-                                  <option value="maintenance">Maintenance</option>
-                                </optgroup>
-                              </select>
-                            </div>
-                            </div>
-                            <!-- <div class="form-row form-row-date form-row-step-2">
-                              <div class="form-holder form-holder-2">
-                                <label for="date_2" class="special-label">Expiry Date:</label>
-                                <select name="date_2" id="date_2" class="form-control">
-                                  <option value="15" selected>15</option>
-                                  <option value="16">16</option>
-                                  <option value="17">17</option>
-                                  <option value="18">18</option>
-                                  <option value="19">19</option>
-                                </select>
-                                <select name="month_2" id="month_2" class="form-control">
-                                  <option value="Jan" selected>Jan</option>
-                                  <option value="Feb">Feb</option>
-                                  <option value="Mar">Mar</option>
-                                  <option value="Apr">Apr</option>
-                                  <option value="May">May</option>
-                                </select>
-                                <select name="year_2" id="year_2" class="form-control">
-                                  <option value="2018" selected>2018</option>
-                                  <option value="2017">2017</option>
-                                  <option value="2016">2016</option>
-                                  <option value="2015">2015</option>
-                                  <option value="2014">2014</option>
-                                  <option value="2013">2013</option>
-                                </select>
-                              </div>
-                            </div> -->
-                            <div class="form-row" style="display:none;">
-                              <div class="form-holder form-holder-2 placeholder-glow">
-                                <label for="account_num">Account Number:</label>
-                                <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_num" name="account_num" />
-                                <span class="placeholder col-6"><i class="zmdi zmdi-card"></i></span>
-                              </div>
-                            </div>
-                          </div>
+                              <section class="section-container step-tab-panel" data-step="step2">
+                                  <fieldset class="inner">
+                                    <div class="row">
+                                      <div class="col-sm-3 mb-2">
+                                        <label for="cep">CEP</label>
+                                        <input type="text" class="form-control form-control-lg" placeholder="Entre com o CEP" style="text-align:end; padding-right:1em;" id="cep" name="cep" />
+                                      </div>
+                                      <div class="col-sm-4 mb-2 align-items-center">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" id="chkcep" /><!--https://wakeupandcode.com/forms-and-fields-in-asp-net-core/-->
+                                          <label class="form-check-label" for="chkcep">
+                                            Não sei o CEP
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-5 mb-2" style="visibility:hidden">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="text" placeholder="+1 777-888-8888" class="form-control form-control-lg" id="phone" name="phone" />
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-7 mb-2">
+                                        <label for="address">Endereço</label>
+                                        <input type="text" placeholder="Logradouro" class="form-control form-control-lg" id="address" name="address" disabled="true" />
+                                        <span><i class="zmdi zmdi-pin"></i></span>
+                                      </div>
+                                      <div class="col-sm-2 mb-2">
+                                        <label for="address-number">Número</label>
+                                        <input type="text" placeholder="Informe o número do endereço" class="form-control form-control-lg" id="address-number" name="address-number" />
+                                      </div>
+                                      <div class="col-sm-3 mb-2">
+                                        <label for="address-extend">Complemento</label>
+                                        <input type="text" placeholder="Informe o complemento do endereço" class="form-control form-control-lg" id="address-extend" name="address-extend" />
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-8 mb-2">
+                                        <label for="address-city">Cidade</label>
+                                        <input type="text" placeholder="Cidade" class="form-control form-control-lg" id="address-city" name="address-city" disabled="true" />
+                                      </div>
+                                      <div class="col-sm-4 mb-2">
+                                        <label for="address-state">Estado</label>
+                                        <input type="text" placeholder="Estado" class="form-control form-control-lg" id="address-state" name="address-state" disabled="true"/>
+                                        <!-- <span><i class="zmdi zmdi-pin"></i></span> -->
+                                      </div>
+                                    </div>
+                                    <div class="form-row" style="display:none;">
+                                      <div class="form-holder form-holder-2">
+                                        <label for="account_number">Account Number:</label>
+                                        <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_number" name="account_number" />
+                                        <span class="card"><i class="zmdi zmdi-card"></i></span>
+                                      </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 18px;display:none;">
+                                      <div class="input-group mb-3">
+                                      <label class="input-group-text" for="job">Job Role</label>
+                                        <select id="job" name="user_job" class="form-select">
+                                          <optgroup label="Web">
+                                            <option value="frontend_developer">Front-End Developer</option>
+                                            <option value="php_developor">PHP Developer</option>
+                                            <option value="python_developer">Python Developer</option>
+                                            <option value="rails_developer"> Rails Developer</option>
+                                            <option value="web_designer">Web Designer</option>
+                                            <option value="WordPress_developer">WordPress Developer</option>
+                                          </optgroup>
+                                          <optgroup label="Mobile">
+                                            <option value="Android_developer">Androild Developer</option>
+                                            <option value="iOS_developer">iOS Developer</option>
+                                            <option value="mobile_designer">Mobile Designer</option>
+                                          </optgroup>
+                                          <optgroup label="Business">
+                                            <option value="business_owner">Business Owner</option>
+                                            <option value="freelancer">Freelancer</option>
+                                          </optgroup>
+                                          <optgroup label="Other">
+                                            <option value="secretary">Secretary</option>
+                                            <option value="maintenance">Maintenance</option>
+                                          </optgroup>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <!-- <div class="form-row form-row-date form-row-step-2">
+                                      <div class="form-holder form-holder-2">
+                                        <label for="date_2" class="special-label">Expiry Date:</label>
+                                        <select name="date_2" id="date_2" class="form-control">
+                                          <option value="15" selected>15</option>
+                                          <option value="16">16</option>
+                                          <option value="17">17</option>
+                                          <option value="18">18</option>
+                                          <option value="19">19</option>
+                                        </select>
+                                        <select name="month_2" id="month_2" class="form-control">
+                                          <option value="Jan" selected>Jan</option>
+                                          <option value="Feb">Feb</option>
+                                          <option value="Mar">Mar</option>
+                                          <option value="Apr">Apr</option>
+                                          <option value="May">May</option>
+                                        </select>
+                                        <select name="year_2" id="year_2" class="form-control">
+                                          <option value="2018" selected>2018</option>
+                                          <option value="2017">2017</option>
+                                          <option value="2016">2016</option>
+                                          <option value="2015">2015</option>
+                                          <option value="2014">2014</option>
+                                          <option value="2013">2013</option>
+                                        </select>
+                                      </div>
+                                    </div> -->
+                                    <div class="form-row" style="display:none;">
+                                      <div class="form-holder form-holder-2 placeholder-glow">
+                                        <label for="account_num">Account Number:</label>
+                                        <input type="text" placeholder="4576-6970-3801-2620" class="form-control input-step-2-2" id="account_num" name="account_num" />
+                                        <span class="placeholder col-6"><i class="zmdi zmdi-card"></i></span>
+                                      </div>
+                                    </div>
+                                  </fieldset>
                               </section>
                               <!-- SECTION 3 -->
                               <h2>
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
-                                <span class="step-text">Resumo</span>
+                                <span class="step-text">Veículo</span>
                               </h2>
-                              <section>
-                                  <div class="inner">
-                                    <h3>Confirmação</h3>
-                            <div class="form-row table-responsive">
-                              <table class="table">
-                                <tbody>
-                                  <tr class="space-row">
-                                    <th>Nome Completo:</th>
-                                    <td id="fullname-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Email:</th>
-                                    <td id="email-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Telefone:</th>
-                                    <td id="phone-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Endereço:</th>
-                                    <td id="address-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Genero:</th>
-                                    <td id="gender-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Veículo:</th>
-                                    <td id="account-name-val"></td>
-                                  </tr>
-                                  <tr class="space-row">
-                                    <th>Placa:</th>
-                                    <td id="plate_number-val"></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </div>
+                              <section class="step-tab-panel" data-step="step3">
+                                  <fieldset class="inner">
+                                    <!-- <legend>
+                                      <span class="step-heading">Personal Informaltion: </span>
+                                      <span class="step-number">Step 1 / 4</span>
+                                    </legend> -->
+                                  <!-- <h3>Confirmação</h3> -->
+                                  <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                      <label for="plate_number">Placa</label>
+                                      <input type="text" placeholder="Informe a placa" class="form-control form-control-lg input-step-2" id="plate_number" name="plate_number" />
+                                      <span><i class="zmdi zmdi-search"></i></span>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                      <label for="branch">Marca</label>
+                                      <input type="text" placeholder="Volkswagen" name="branch" class="form-control form-control-lg input-step-2-1" id="branch" />
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                      <label for="model">Modelo</label>
+                                      <input type="text" placeholder="Informe o modelo" class="form-control form-control-lg input-step-2" id="vehicle-model" name="vehicle-model" />                                
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                      <label for="owner">Propriedade</label>
+                                      <select class="form-select form-control form-control-lg select" name="vehicle-owner-type" id="vehicle-owner-type">
+                                        <option value="1" disabled>Veículo</option>
+                                        <option value="2">Próprio</option>
+                                        <option value="3">Alugado</option>
+                                        <option value="3">Outro ou Não informar</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                      <label for="vehicle-made-year">Ano Fabricação</label>
+                                      <select name="vehicle-made-year" id="vehicle-made-year" class="form-control form-control-lg form-select select">
+                                      </select>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                      <label for="vehicle-color">Cor</label>
+                                      <input type="text" name="vehicle-color" class="form-control form-control-lg" id="vehicle-color" placeholder="Informe a cor" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" />
+                                    </div>
+                                  </div>
+                                  <!-- <div class="form-row table-responsive">
+
+                                  </div> -->
+                                  </fieldset>
                               </section>
                               <!-- SECTION 4 -->
                               <h2>
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
                                 <span class="step-text">Concluir</span>
                               </h2>
-                              <section>
-                                  <div class="inner">
-                                    <h3>Finalizar</h3>
+                              <section class="step-tab-panel" data-step="step4">
+                                  <fieldset class="inner">
+                                    <h3>Resumo</h3>
                             <div class="form-row table-responsive">
                               <table class="table">
                                 <tbody>
@@ -886,9 +874,14 @@
                                 </tbody>
                               </table>
                             </div>
-                          </div>
+                                  </fieldset>
                               </section>
                           </div>
+                          <!-- <div class="step-footer">
+                            <button data-step-action="prev" class="step-btn">Previous</button>
+                            <button data-step-action="next" class="step-btn">Next</button>
+                            <button data-step-action="finish" class="step-btn">Finish</button>
+                          </div> -->
                         </form>
                   </div>
                 </div>
@@ -913,6 +906,7 @@
     <!-- ===============================================-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
@@ -923,10 +917,12 @@
     <script src="vendors/datepicker/moment.min.js"></script>
     <script src="vendors/datepicker/daterangepicker.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/theme.js"></script>
     <!-- MDB -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
 <script>
   //Expressão regular para validar o CEP.
 var validacep = /^[0-9]{8}$/;
@@ -943,6 +939,21 @@ $(document).ready(function(){
     const emailEl = document.querySelector("#contact-email");
     const companyNameEl = document.querySelector("#contact-reason");
     const messageEl = document.querySelector("#contact-message");
+    const form = document.querySelector("#submit-form");
+
+    var action_type = null;
+
+    var fullname_val = null;
+    var cpf_val = null;
+    var email_val = null;
+    var phone_val = null;
+    var cep_val = null;
+    var address_val = null;
+    var gender1_val = null;
+    var gender_val = $('select#gender option').filter(':selected').text();
+    var date_val = $('select#date option').filter(':selected').text();
+    var account_name_val = $('#account_name').val();
+    var plate_number_val = $('#plate_number').val();
 
     $("#chkcep").change(function() {
       $("#cep").prop('disabled', $(this).prop('checked'));
@@ -959,33 +970,46 @@ $(document).ready(function(){
     });
 
     $( "#cep" ).on( "blur", function() {
+      //Nova variável "cep" somente com dígitos.
+      var cep = $(this).val().replace(/\D/g, '');
+      console.log('cep', cep);
 
-//Nova variável "cep" somente com dígitos.
-var cep = $(this).val().replace(/\D/g, '');
-console.log('cep', cep);
+      //Verifica se campo cep possui valor informado.
+      if (cep != "") {
+        //Valida o formato do CEP.
+        if(validacep.test(cep)) {
+          console.log('cep ok');
+          recuperarCEP(cep);
+        } else {
+          console.log('cep invalido');
+        };
+      } else {
+        alert('Informe o CEP antes de continuar');
+        //$('#cep').focus();
+        return;
+      };
+    });
 
-//Verifica se campo cep possui valor informado.
-if (cep != "") {
-  //Valida o formato do CEP.
-  if(validacep.test(cep)) {
-    console.log('cep ok');
-    recuperarCEP(cep);
-  } else {
-    console.log('cep invalido');
-  };
-} else {
-  alert('Informe o CEP antes de continuar');
-  //$('#cep').focus();
-  return;
-};
-});
+    $( "#cpf" ).on( "blur", function() {
+      //Nova variável "cep" somente com dígitos.
+      var cpf = $(this).val().replace(/\D/g, '');
+      console.log('cpf', cpf);
 
-$('#cep').on('focus', function() {
-     //$(this).toggleClass('input1 input2');
-});
+      //Verifica se campo cep possui valor informado.
+      if (cpf != "") {
+        //Valida o formato do CEP.
+        action_type = "create_new"
+        console.log('cpf ok');
+      } else {
+        alert('Informe o CPF antes de continuar');
+        //$('#cep').focus();
+        return;
+      };
+    });
 
-$('input[name="cpf"]').mask('000.000.000-00');
-$('input[name="cep"]').mask('00000-000');
+    $('input[name="cpf"]').mask('000.000.000-00');
+    $('input[name="cep"]').mask('00000-000');
+    $('input[name="phone"]').mask('(00) 00000 0000');
 
    var bindDatePicker = function() {
 		$(".date").datetimepicker({
@@ -1009,7 +1033,7 @@ $('input[name="cep"]').mask('00000-000');
 			$(this).val(date);
 		});
 	}
-   
+  
    var isValidDate = function(value, format) {
 		format = format || false;
 		// lets parse the date to the best of our knowledge
@@ -1036,7 +1060,7 @@ $('input[name="cep"]').mask('00000-000');
 
     var select = document.getElementById("date");
     var selYear = document.getElementById("year");
-    var selYearVehicle = document.getElementById("year-vehicle");
+    var selYearVehicle = document.getElementById("vehicle-made-year");
 
     for (const day of daysOfMonth)
         {
@@ -1085,6 +1109,7 @@ $('input[name="cep"]').mask('00000-000');
   window.addEventListener('load', function() {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
+    console.log('forms', forms);
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
@@ -1096,15 +1121,139 @@ $('input[name="cep"]').mask('00000-000');
       }, false);
     });
   }, false);
-})();
 
- $("#cpf").focusout(function(){
-      $('input[name="cpf"]').val( this.value.toUpperCase() );
-			//Início do Comando AJAX
-      console.log($("#cpf")[0].value, $("#cpf")[0]);
+  const ALL_POKEMONS_URL = 'https://pokeapi.co/api/v2/pokemon?limit=50';
+  // We have discussed this function already!
+let promise = getPromise(ALL_POKEMONS_URL);
+
+const consumer = () => {
+    promise.then(
+        (result) => {
+            console.log({result}); // Log the result of 50 Pokemons
+        },
+        (error) => {
+            // As the URL is a valid one, this will not be called.
+            console.log('We have encountered an Error!'); // Log an error
+    });
+}
+
+setTimeout(() => {
+  consumer();
+  }, 7000);
+
+  const calculation = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(1 + 1), 5000)
 });
 
+calculation.then(result => console.log(result));
 
+const age = 18;
+const user = {name: 'zack'};
+
+const checkCoffeeAble = new Promise((resolve, reject) => {
+  if (age >= 18) {
+    resolve(user)
+  } else {
+    reject("cannot have coffee")
+  }
+});
+
+const canHaveCoffee = (result) => {
+  console.log('coffee_drinker', result.name);
+};
+
+const cannotHaveCoffee = (result) => {
+  console.log(result)
+};
+
+checkCoffeeAble.then(canHaveCoffee, cannotHaveCoffee);
+
+// const req = new XMLHttpRequest();
+// req.addEventListener("readystatechange", () => {
+//   console.log(req.readystate);
+//   if (req.readyState === 4 && req.status === 200) {
+//     console.log(JSON.parse(req.responseText));
+//   } else if (req.readyState === 4) {
+//     console.log("could not fetch the data");
+//   }
+// });
+
+const getData = (resource) => {
+  return new Promise((resolve, reject) => {
+    let req = new XMLHttpRequest();
+    req.addEventListener("readystatechange", () => {
+      if (req.readyState === 4 && req.status === 200) {
+        let data = JSON.parse(req.responseText);
+        resolve(data);
+      } else if (req.readyState === 4) {
+        reject("error getting resources");
+      }
+    });
+    req.open("GET", resource);
+    req.send();
+  });
+};
+
+//https://www.modernjsbyexample.net/book/005-asynchronous-tooling
+//https://www.atatus.com/blog/fetch-api-replacement-for-xmlhttprequest-xhr/
+getData("https://driverconnect.azurewebsites.net/api/Customer/GetAll?PageNumber=1&PageSize=10")
+  .then((data) => {
+    console.log("promise resolved", data);
+  })
+  .catch((err) => {
+    console.log("promise rejected", err);
+  })
+  .finally(res => { console.log("finally") });
+
+  async function getDataAsync(res) {
+  try {
+    const resp = await fetch(res);
+    if (!resp.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await resp.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+getDataAsync('https://driverconnect.azurewebsites.net/api/Customer/GetAll?PageNumber=1&PageSize=10');
+
+const request = new XMLHttpRequest();
+request.open('GET', 'https://driverconnect.azurewebsites.net/api/Customer/GetAll?PageNumber=1&PageSize=10');
+request.setRequestHeader("Access-Control-Allow-Origin", "*");
+request.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:46161");
+request.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+request.send();
+console.log(request);
+request.addEventListener('upload', function () {
+    const data = JSON.parse(request.responseText)
+    console.log('responseTex', data)
+});
+
+fetch('https://driverconnect.azurewebsites.net/api/Customer/GetAll?PageNumber=1&PageSize=10')
+  .then(response => {
+  	if (!response.ok)
+  		throw new Error('Country not found (${response.status})')
+    console.log(response)
+  })
+  .then(data => console.log('data', data))
+  .catch(err => console.log('Error: ${err}'));
+
+  const getPopulation = async function(country) {
+  try {
+    const response = await fetch('https://restcountries.com/v3.1/name/' + country);
+    const data = await response.json();
+    if (!data.ok) throw new Error('Problem getting country data.');
+  } catch (error) {
+    console.error('Something went wrong! ' + error);
+  };
+};
+
+getPopulation('portugal');
+
+})();
 
 // $('input[name="cpf"]').focusout(function() {
 //    $('input[name="cpf"]').val(this.value);
@@ -1165,6 +1314,21 @@ var app = (function(){
     }
 })();
 
+
+jQuery.extend(jQuery.validator.messages, {
+        required: "Preencimento obrigatório",
+        remote: "",
+        email: "@",
+        phone: "(##) #####-####",
+        url: "",
+        date: "",
+        dateISO: "",
+        number: "",
+        digits: "",
+        creditcard: "",
+        equalTo: ""
+    });
+
     //const optionToSelect = optYear.find(item => item.text ==='2022');
 //console.log(selYear, optionToSelect); // [0,1,2,3,4,5,6]
 
@@ -1177,7 +1341,7 @@ var app = (function(){
 //the navigate method is private inside our iife
 //the variables pages and links are public and can be accessed as app.pages or app.links
 
-$("button").click(function(){
+$("button .fff").click(function(){
   $.post("test.asp", function(data, status){
     alert("Data: " + data + "\nStatus: " + status);
   });
@@ -1269,6 +1433,22 @@ function reset() {
   companyNameEl = "";
   messageEl = "";
   document.querySelector(".name-error").innerText = "";
+}
+
+function getPromise(URL) {
+  let promise = new Promise(function (resolve, reject) {
+    let req = new XMLHttpRequest();
+    req.open("GET", URL);
+    req.onload = function () {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        reject("There is an Error!");
+      }
+    };
+    req.send();
+  });
+  return promise;
 }
 
 // $("#_cep").focusout(function(){
@@ -1402,14 +1582,84 @@ function addOption(day){
 function removeOption(){
 	var select = document.getElementById("date");
 	select.options[select.options.length - 1] = null;
-}
+};
 
 function removeAllOptions(){
 	var select = document.getElementById("date");
 	select.options.length = 0;
-}
+};
 
-$(function(){
+$(function() {
+
+  var form = $("#form-register");
+    form.validate({
+        errorPlacement: function errorPlacement(error, element) {
+            console.log('validate', element);
+            element.before(error); 
+        },
+        rules: {
+            fullname : {
+                required: true,
+            },
+            // last_name : {
+            //     required: true,
+            // },
+            // user_name : {
+            //     required: true,
+            // },
+            // password : {
+            //     required: true,
+            // },
+            email : {
+                required: true,
+            },
+            phone : {
+                required: true,
+            },
+            address: {
+                required: true,
+            },
+            // employee_id : {
+            //     required: true,
+            // },
+            // designation: {
+            //     required: true,
+            // },
+            // department: {
+            //     required: true,
+            // },
+            // work_hours: {
+            //     required: true,
+            // },
+            // bank_name: {
+            //     required: true,
+            // },
+            // holder_name: {
+            //     required: true,
+            // },
+            // card_number: {
+            //     required: true,
+            //     number: true,
+            // },
+            // cvc: {
+            //     required: true,
+            // }
+        },
+        onfocusout: function(element) {
+            $(element).valid();
+        },
+        highlight : function(element, errorClass, validClass) {
+            $(element.form).find('.actions').addClass('form-error');
+            $(element).removeClass('valid');
+            $(element).addClass('error');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element.form).find('.actions').removeClass('form-error');
+            $(element).removeClass('error');
+            $(element).addClass('valid');
+        }
+    });
+
     $("#form-total").steps({
         headerTag: "h2",
         bodyTag: "section",
@@ -1419,33 +1669,96 @@ $(function(){
         transitionEffectSpeed: 500,
         titleTemplate : '<div class="title">#title#</div>',
         labels: {
-            previous : 'Voltar',
+            previous : '<i class="zmdi zmdi-chevron-left"></i>',
             next : '<i class="zmdi zmdi-chevron-right"></i>',
-            finish : '<i class="zmdi zmdi-chevron-right"></i>',
-            current : ''
+            finish : '<i class="zmdi zmdi-check"></i>',
+            current : '<i class="zmdi zmdi-chevron-right"></i>'
         },
         onStepChanging: function (event, currentIndex, newIndex) { 
-            var fullname = $('#first_name').val() + ' ' + $('#cpf').val();
-            var cpf = $('#cpf').val();
-            var email = $('#email').val();
-            var phone = $('#phone').val();
-            var address = $('#address').val();
-            var gender1 = $('form input[type=radio]:checked').val();
-            var gender = $('select#gender option').filter(':selected').text();
-            var date = $('select#date option').filter(':selected').text();
-            var account_name = $('#account_name').val();
-            var plate_number = $('#plate_number').val();
+            console.log(event, currentIndex, newIndex);
+            //checkValidations();
+            if ( newIndex === 3 ) {
+                $('.steps li').addClass('forward');
+            } else {
+                $('.steps li').removeClass('step-2');
+            }
 
-            $('#fullname-val').text(fullname);
-            $('#email-val').text(email);
-            $('#phone-val').text(phone);
-            $('#address-val').text(address);
-            $('#gender-val').text(gender);
-            $('#account-name-val').text(account_name);
-            $('#plate_number-val').text(plate_number);
+            fullname_val = $('#fullname').val();
+            cpf_val = $('#cpf').val();
+            email_val = $('#email').val();
+            phone_val = $('#phone').val();
+            cep_val = $('#cep').val();
+            address_val = $('#address').val();
+            address_city_val = $('#address-city').val();
+            address_state_val = $('#address-state').val();
+            gender1_val = $('form input[type=radio]:checked').val();
+            gender_val = $('select#gender option').filter(':selected').val();
+            date_val = $('select#date option').filter(':selected').val() + '/' + $('select#month option').filter(':selected').val() + '/' + $('select#year option').filter(':selected').val() ;
+            account_name_val = $('#account_name').val();
+            plate_number_val = $('#plate_number').val();
+
+            $('#fullname-val').text(fullname_val);
+            $('#cpf-val').text(cpf_val);
+            $('#email-val').text(email_val);
+            $('#phone-val').text(phone_val);
+            $('#cep-val').text(cep_val);
+            $('#address-val').text(address_val);
+            $('#address-city-val').text(address_city_val);
+            $('#address-state-val').text(address_state_val);
+            $('#gender-val').text(gender_val);
+            $('#account-name-val').text(account_name_val);
+            $('#plate_number-val').text(plate_number_val);
 
             return true;
-        }
+        },
+        onFinishing: function (event, currentIndex)
+        {
+            form.validate().settings.ignore = ":disabled";
+            
+            let payload = {
+              "name": fullname_val, // document.querySelector("#fullname"),
+              "dob": date_val,
+              "gender": gender_val,
+              "currentAddress": "string",
+              "permanentAddress": "string",
+              "mobilePhone": "string",
+              "city": "string",
+              "nationality": "string",
+              "pinCode": "string",
+              "createdOn": "2023-07-17T02:20:25.604Z",
+              "personId": 0,
+              "person": {
+                "name": fullname_val,
+                "documentNumber": cpf_val,
+                "phone": phone_val,
+                "email": email_val,
+                "gender": gender_val,
+                "dob": "2023-07-17T02:20:25.604Z",
+                "createdAt": "2023-07-17T02:20:25.604Z",
+                "driverId": 0
+              },
+              "addressId": 0,
+              "address": {
+                "street": address_val,
+                "city": address_city_val,
+                "state": address_state_val,
+                "zipCode": parseInt(cep_val.replace('-', '')),
+                "pin": "string"
+              }
+            };
+            console.log('onFinishing', payload);
+            return form.valid();
+        },
+        onFinished: function (event, currentIndex)
+        {
+            //alert('Sumited');
+        },
+        onFinish: function () { alert('completo'); }
+    });
+
+    $('.forward').click(function(){
+      console.log('forward');
+      $("#wizard").steps('next');
     });
 });
   </script>

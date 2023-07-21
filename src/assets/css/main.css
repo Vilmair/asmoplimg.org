@@ -758,6 +758,12 @@ input[type="checkbox"] {
   left: 0;
 }
 
+.inner label + .error
+{
+  color: #eb3746 !important;
+  font-size: .8rem;
+}
+
 /* ==========================================================================
    #SELECT2
    ========================================================================== */
@@ -1109,13 +1115,14 @@ input[type="checkbox"] {
 	color: #333;
 	padding-top: 10px;
 }
-.form-register .content #form-total-p-0 {
+.form-register .content #form-total-p-0,
+.form-register .content #form-total-p-1 {
     /* padding: 10px 220px 5px 45px; */
     padding: 10px 15px 5px 15px;
 }
-.form-register .content #form-total-p-1 {
+/* .form-register .content #form-total-p-1 {
     padding: 10px 220px 1px 45px;
-}
+} */
 .form-register .content h2 {
 	display: none;
 }
@@ -1395,8 +1402,8 @@ input[type="checkbox"] {
     -moz-justify-content: space-between;
     -webkit-justify-content: space-between;
 }
-.actions ul li.disabled,
-.actions ul li:first-child {
+.actions ul li.disabled/*,
+.actions ul li:first-child*/ {
 	opacity: 0;
 }
 .actions ul li {
@@ -1426,16 +1433,17 @@ input[type="checkbox"] {
 .actions ul li:hover {
 	background: #219c50;
 }
-.actions ul li a {
+.actions ul li a, ul li button {
 	color: #fff;
 	text-decoration: none;
-    padding: 11px 20px;
+  padding: 11px 20px;
 }
 .actions ul li:first-child a {
 	color: #666;
 }
-.actions ul li a i {
+.actions ul li a i, ul li button > i {
 	font-size: 26px;
+  color: #fff;
 }
 
 /* Responsive */
@@ -1455,7 +1463,7 @@ input[type="checkbox"] {
 	    padding: 0 30px 45px;
 	}
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
 	.form-register .steps li a .title {
 		flex-direction: column;
 		-o-flex-direction: column;
@@ -1557,6 +1565,13 @@ input[type="checkbox"] {
 		width: auto;
 	}
 }
+@media (min-width: 992px) {
+  section {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+  }
+}
+
 .align-items-center {
   align-self: center;
 }
