@@ -1771,10 +1771,6 @@ $(function() {
         },
         onFinished: function (event, currentIndex)
         {
-            alert('Sumited');
-        },
-        onFinish: function () {
-
           let url = "https://driverconnect.azurewebsites.net/api/Customer";
 
           let payload = {
@@ -1824,7 +1820,9 @@ $(function() {
               //https://www.delftstack.com/howto/javascript/close-modal-javascript/
               $('#staticBackdrop').modal('hide');
             });
-
+        },
+        onFinish: function () {
+            alert('Sumited');
             console.log('onFinish', form.valid()); 
         }
     });
