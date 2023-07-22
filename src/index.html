@@ -798,8 +798,8 @@
                                   <!-- <h3>Confirmação</h3> -->
                                   <div class="row">
                                     <div class="col-md-6 mb-2">
-                                      <label for="plate_number">Placa</label>
-                                      <input type="text" placeholder="Informe a placa" class="form-control form-control-lg input-step-2" id="plate_number" name="plate_number" required>
+                                      <label for="vehicle-plate-number">Placa</label>
+                                      <input type="text" placeholder="Informe a placa" class="form-control form-control-lg input-step-2" id="vehicle-plate-number" name="vehicle-plate-number" required>
                                       <span><i class="zmdi zmdi-search"></i></span>
                                     </div>
                                     <div class="col-md-6 mb-2">
@@ -809,7 +809,7 @@
                                   </div>
                                   <div class="row">
                                     <div class="col-md-6 mb-2">
-                                      <label for="model">Modelo</label>
+                                      <label for="vehicle-model">Modelo</label>
                                       <input type="text" placeholder="Informe o modelo" class="form-control form-control-lg input-step-2" id="vehicle-model" name="vehicle-model" />                                
                                     </div>
                                     <div class="col-md-6 mb-2">
@@ -871,11 +871,11 @@
                                           </tr>
                                           <tr class="space-row">
                                             <th>Veículo:</th>
-                                            <td id="account-name-val"></td>
+                                            <td id="vehicle-model-val"></td>
                                           </tr>
                                           <tr class="space-row">
                                             <th>Placa:</th>
-                                            <td id="plate_number-val"></td>
+                                            <td id="vehicle-plate-number-val"></td>
                                           </tr>
                                         </tbody>
                                       </table>
@@ -968,8 +968,8 @@ $(document).ready(function(){
     var gender1_val = null;
     var gender_val = $('select#gender option').filter(':selected').text();
     var date_val = $('select#date option').filter(':selected').text();
-    var account_name_val = $('#account_name').val();
-    var plate_number_val = $('#plate_number').val();
+    var vehicle_model_val = null;
+    var vehicle_plate_number_val = null;
 
     $("#chkcep").change(function() {
       $("#cep").prop('disabled', $(this).prop('checked'));
@@ -1749,8 +1749,8 @@ $(function() {
             gender1_val = $('form input[type=radio]:checked').val();
             gender_val = $('select#gender option').filter(':selected').val();
             date_val = $('select#month option').filter(':selected').val() + '/' + $('select#date option').filter(':selected').val() + '/' + $('select#year option').filter(':selected').val() ;
-            account_name_val = $('#account_name').val();
-            plate_number_val = $('#plate_number').val();
+            vehicle_model_val = $('#vehicle-model').val();
+            vehicle_plate_number_val = $('#vehicle-plate-number').val();
 
             $('#fullname-val').text(fullname_val);
             $('#cpf-val').text(cpf_val);
@@ -1762,8 +1762,8 @@ $(function() {
             $('#address-city-val').text(address_city_val);
             $('#address-state-val').text(address_state_val);
             $('#gender-val').text(gender_val);
-            $('#account-name-val').text(account_name_val);
-            $('#plate_number-val').text(plate_number_val);
+            $('#vehicle-model-val').text(vehicle_model_val);
+            $('#vehicle-plate-number-val').text(vehicle_plate_number_val);
 
             return true;
         },
