@@ -1018,7 +1018,9 @@ $(document).ready(function(){
         .then(response => {
           if (!response.ok)
             throw new Error('Country not found (${response.status})')
-          console.log(response)
+          console.log(response);
+          alert('CPF já cadastrado!');
+          return false;
         })
         .then(data => console.log('data', data))
         .catch(err => console.log('Error: ${err}'));
@@ -1792,7 +1794,7 @@ $(function() {
               "dob": new Date(date_val).toISOString(),
               "gender": gender_val,
               "currentAddress": address_number_val,
-              "permanentAddress": cpf_val,
+              "permanentAddress": cpf_val.replace(/\D/g, ''),
               "mobilePhone": phone_val,
               "city": address_city_val,
               "nationality": "",
