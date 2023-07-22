@@ -1013,7 +1013,16 @@ $(document).ready(function(){
 
       //Verifica se campo cep possui valor informado.
       if (cpf != "") {
-        //Valida o formato do CEP.
+        //Valida o formato do CPF.
+        fetch('https://driverconnect.azurewebsites.net/api/Customer/GetByDocumentNumber/' + cpf)
+        .then(response => {
+          if (!response.ok)
+            throw new Error('Country not found (${response.status})')
+          console.log(response)
+        })
+        .then(data => console.log('data', data))
+        .catch(err => console.log('Error: ${err}'));
+
         action_type = "create_new"
         console.log('cpf ok');
       } else {
@@ -1151,7 +1160,7 @@ const consumer = () => {
             // As the URL is a valid one, this will not be called.
             console.log('We have encountered an Error!'); // Log an error
     });
-}
+};
 
 setTimeout(() => {
   consumer();
@@ -1210,7 +1219,7 @@ const getData = (resource) => {
   });
 };
 
-function getPromise(URL) {
+function getPromise(url) {
     let promise = new Promise(function (resolve, reject) {
     let req = new XMLHttpRequest();
     req.open("GET", URL);
