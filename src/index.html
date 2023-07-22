@@ -965,6 +965,7 @@ $(document).ready(function(){
     var cep_val = null;
     var address_val = null;
     var address_number_val = null;
+    var address_extent_val = null;
     var gender1_val = null;
     var gender_val = $('select#gender option').filter(':selected').text();
     var date_val = $('select#date option').filter(':selected').text();
@@ -1755,6 +1756,7 @@ $(function() {
             cep_val = $('#cep').val();
             address_val = $('#address').val();
             address_number_val = $('#address-number').val();
+            address_extent_val = $('#address-extent').val();
             address_city_val = $('#address-city').val();
             address_state_val = $('#address-state').val();
             gender1_val = $('form input[type=radio]:checked').val();
@@ -1770,6 +1772,7 @@ $(function() {
             $('#cep-val').text(cep_val);
             $('#address-val').text(address_val);
             $('#address-number-val').text(address_number_val);
+            $('#address-extent-val').text(address_extent_val);         
             $('#address-city-val').text(address_city_val);
             $('#address-state-val').text(address_state_val);
             $('#gender-val').text(gender_val);
@@ -1811,6 +1814,8 @@ $(function() {
               },
               "address": {
                 "street": address_val,
+                "number": address_number_val,
+                "extent": address_extent_val,
                 "city": address_city_val,
                 "state": address_state_val,
                 "zipCode": parseInt(cep_val.replace('-', '')),
