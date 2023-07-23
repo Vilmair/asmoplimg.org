@@ -1761,7 +1761,7 @@ $(function() {
 
             // If user click on "Previous" button, we just normally let he/she goes
             if (newIndex < currentIndex) {
-                return true;
+              return form.valid();
             };
 
             fullname_val = $('#fullname').val();
@@ -1794,7 +1794,7 @@ $(function() {
             $('#vehicle-model-val').text(vehicle_model_val);
             $('#vehicle-plate-number-val').text(vehicle_plate_number_val);
 
-            return true;
+            return form.valid();
         },
         onFinishing: function (event, currentIndex)
         {
