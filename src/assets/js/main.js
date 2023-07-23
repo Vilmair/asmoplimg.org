@@ -14,6 +14,7 @@ $(document).ready(function(){
     // $('input[name="phone"]').mask('(00) 00000 0000');
 
     $('#cep').on('focus', function() {
+        console.log('main.js');
         //$(this).toggleClass('input1 input2');
     });
 

@@ -540,7 +540,7 @@
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
                                 <span class="step-text">Identificação</span>
                               </h2>
-                              <section class="section-container step-tab-panel" data-step="step0">
+                              <section class="section-container step-tab-panel" data-step="step1">
                                   <fieldset class="inner">
                                     <!-- <legend>
                                       <span class="step-heading">Personal Informaltion: </span>
@@ -563,7 +563,7 @@
                                       </div>
                                       <div class="col-sm-4 mb-2">
                                         <label for="phone">Telefone</label>
-                                        <input type="text" placeholder="99 99999 9999" class="form-control form-control-lg" id="phone" name="phone" data-mask="99 99999 9999" required />
+                                        <input type="text" placeholder="(99) 99999 9999" class="form-control form-control-lg" id="phone" name="phone" data-mask="99 99999 9999" required />
                                       </div>
                                     </div>
                                     <div class="form-group row">
@@ -666,7 +666,7 @@
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
                                 <span class="step-text">Endereço</span>
                               </h2>
-                              <section class="section-container step-tab-panel" data-step="step1">
+                              <section class="section-container step-tab-panel" data-step="step2">
                                   <fieldset class="inner">
                                     <div class="row">
                                       <div class="col-sm-3 mb-2">
@@ -682,8 +682,8 @@
                                         </div>
                                       </div>
                                       <div class="col-sm-5 mb-2" style="visibility:hidden">
-                                        <label for="phone">Phone Number</label>
-                                        <input type="text" placeholder="+1 777-888-8888" class="form-control form-control-lg" id="phone" name="phone" />
+                                        <label for="_phone">Phone Number</label>
+                                        <input type="text" placeholder="+1 777-888-8888" class="form-control form-control-lg" id="_phone" name="_phone" />
                                       </div>
                                     </div>
                                     <div class="row">
@@ -788,7 +788,7 @@
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
                                 <span class="step-text">Veículo</span>
                               </h2>
-                              <section class="step-tab-panel" data-step="step2">
+                              <section class="step-tab-panel" data-step="step3">
                                   <fieldset class="inner">
                                     <!-- <legend>
                                       <span class="step-heading">Personal Informaltion: </span>
@@ -802,8 +802,8 @@
                                       <span><i class="zmdi zmdi-search"></i></span>
                                     </div>
                                     <div class="col-md-6 mb-2">
-                                      <label for="branch">Marca</label>
-                                      <input type="text" placeholder="Volkswagen" name="branch" class="form-control form-control-lg input-step-2-1" id="branch" />
+                                      <label for="vehicle-branch">Marca</label>
+                                      <input type="text" placeholder="Volkswagen" name="vehicle-branch" class="form-control form-control-lg input-step-2-1" id="vehicle-branch" />
                                     </div>
                                   </div>
                                   <div class="row">
@@ -842,7 +842,7 @@
                                 <span class="step-icon"><i class="zmdi zmdi-check"></i></span>
                                 <span class="step-text">Concluir</span>
                               </h2>
-                              <section class="step-tab-panel" data-step="step3">
+                              <section class="step-tab-panel" data-step="step4">
                                   <fieldset class="inner">
                                     <h3>Resumo</h3>
                                     <div class="form-row table-responsive">
@@ -856,7 +856,7 @@
                                             <th>Email:</th>
                                             <td id="email-val"></td>
                                           </tr>
-                                          <tr class="space-row">
+                                          <tr class="space-row ">
                                             <th>Telefone</th>
                                             <td id="phone-val"></td>
                                           </tr>
@@ -968,6 +968,7 @@ $(document).ready(function(){
     var gender1_val = null;
     var gender_val = $('select#gender option').filter(':selected').text();
     var date_val = $('select#date option').filter(':selected').text();
+    var vehicle_branch_val = null;
     var vehicle_model_val = null;
     var vehicle_plate_number_val = null;
 
@@ -1419,7 +1420,7 @@ function recuperarCEP(input) {
             'content-type': 'application/json;charset=utf-8',
         }
     }
-    console.log('validity', $('#cep')[0].validity);
+    console.log('validity', $('#cep')[0].validity.valid);
     if(!$('#cep')[0].validity.patternMismatch && !$('#cep')[0].validity.valueMissing) {
         fetch(url, options).then(
             response => response.json()
@@ -1459,10 +1460,11 @@ if (cep != "") {
 });
 
 function checkValidations() {
+  console.log('checkValidations');
   let letters = /^[a-zA-Z\s]*$/;
   const name = fullname_val.trim();
   const email = email_val.trim();
-  con
+  
   //const companyName = companyNameEl.value.trim();
   //const message = messageEl.value.trim();
   if (name === "") {
@@ -1470,6 +1472,7 @@ function checkValidations() {
       document.querySelector(".name-error").innerText = "Por favor preencha este campo!";
   } else {
     if (!letters.test(name)) {
+      
       document.querySelector(".name-error").classList.add("error");
       document.querySelector(".name-error").innerText = "Please enter only characters!";
     } else {
@@ -1529,13 +1532,13 @@ $("#_cep").focusout(function(){
 					//Agora basta definir os valores que você deseja preencher
 					//automaticamente nos campos acima.
 					$("#address").val(resposta.logradouro);
-					$("#color_name").val(resposta.complemento);
+					$("#address-extend").val(resposta.complemento);
 					// $("#bairro").val(resposta.bairro);
 					// $("#cidade").val(resposta.localidade);
 					// $("#uf").val(resposta.uf);
 					// //Vamos incluir para que o Número seja focado automaticamente
 					// //melhorando a experiência do usuário
-					// $("#numero").focus();
+					$("#address-number").focus();
 				}
 			});
 		});
@@ -1644,7 +1647,7 @@ $(function() {
   var form = $("#form-register");
     form.validate({
         errorPlacement: function errorPlacement(error, element) {
-            console.log('validate', element);
+            console.log('validate', element, error);
             element.before(error); 
         },
         rules: {
@@ -1668,7 +1671,13 @@ $(function() {
             },
             address: {
                 required: true,
+            },  
+            address_number: {
+                required: true,
             },
+            vehicle_plate_number: {
+                required: true,
+            },           
             // employee_id : {
             //     required: true,
             // },
@@ -1699,6 +1708,7 @@ $(function() {
             $(element).valid();
         },
         highlight : function(element, errorClass, validClass) {
+          console.log('highlight', $(element));
             $(element.form).find('.actions').addClass('form-error');
             $(element).removeClass('valid');
             $(element).addClass('error');
@@ -1732,12 +1742,12 @@ $(function() {
             form.validate().settings.ignore = ":disabled,:hidden";
             //checkValidations();
 
-            var fv = $('#form-register').data('formValidation'), // FormValidation instance
-                // The current step container
-                $container = $('#form-register').find('section[data-step="step' + newIndex +'"]');
+            // var fv = $('#form-total').data('formValidation'), // FormValidation instance
+            //     // The current step container
+            //     $container = $('#form-total').find('section[data-step="step' + currentIndex +'"]');
 //.form-register .actions
 //.form-register .steps
-            console.log('fv', fv, $container[0].parentElement.innerHTML, currentIndex, newIndex);
+            console.log('fv', $('#form-total'), currentIndex, newIndex);
 
             // Validate the container
             //fv.validateContainer($container);
@@ -1761,7 +1771,7 @@ $(function() {
 
             // If user click on "Previous" button, we just normally let he/she goes
             if (newIndex < currentIndex) {
-              return form.valid();
+              return true;
             };
 
             fullname_val = $('#fullname').val();
@@ -1777,6 +1787,7 @@ $(function() {
             gender1_val = $('form input[type=radio]:checked').val();
             gender_val = $('select#gender option').filter(':selected').val();
             date_val = $('select#month option').filter(':selected').val() + '/' + $('select#date option').filter(':selected').val() + '/' + $('select#year option').filter(':selected').val() ;
+            vehicle_branch_val = $('#vehicle-branch').val();
             vehicle_model_val = $('#vehicle-model').val();
             vehicle_plate_number_val = $('#vehicle-plate-number').val();
 
@@ -1791,6 +1802,7 @@ $(function() {
             $('#address-city-val').text(address_city_val);
             $('#address-state-val').text(address_state_val);
             $('#gender-val').text(gender_val);
+            $('#vehicle-branch-val').text(vehicle_branch_val);
             $('#vehicle-model-val').text(vehicle_model_val);
             $('#vehicle-plate-number-val').text(vehicle_plate_number_val);
 
@@ -1800,70 +1812,78 @@ $(function() {
         {
             form.validate().settings.ignore = ":disabled";
             
-            console.log('onFinishing', form.valid());
-            return form.valid();
+            console.log('onFinishing', form.valid(), event, currentIndex);
+          
+            let url = "https://driverconnect.azurewebsites.net/api/Customer";
+
+            let payload = {
+                "name": fullname_val, // document.querySelector("#fullname"),
+                "dob": new Date(date_val).toISOString(),
+                "gender": gender_val,
+                "currentAddress": address_number_val,
+                "permanentAddress": cpf_val.replace(/\D/g, ''),
+                "mobilePhone": phone_val,
+                "city": address_city_val,
+                "nationality": "",
+                "pinCode": "",
+                "createdOn": new Date().toJSON(),
+                "person": {
+                  "name": fullname_val,
+                  "documentNumber": cpf_val,
+                  "phone": phone_val,
+                  "email": email_val,
+                  "gender": gender_val,
+                  "dob": new Date(date_val).toJSON(),
+                  "createdAt": new Date().toJSON()
+                },
+                "address": {
+                  "street": address_val,
+                  "number": address_number_val,
+                  "extent": address_extent_val,
+                  "city": address_city_val,
+                  "state": address_state_val,
+                  "zipCode": parseInt(cep_val.replace('-', '')),
+                  "pin": ""
+                }
+              };
+
+              postPromise(url, payload)
+              .then((data) => {
+                console.log("promise resolved", data);
+                alert('Seu cadastro foi finalizado!');
+                //https://laracasts.com/discuss/channels/general-discussion/how-to-hide-a-bootstrap-5-modal-window-in-pure-javascript
+                //https://www.geeksforgeeks.org/how-to-hide-bootstrap-modal-with-javascript/
+                //https://www.delftstack.com/howto/javascript/close-modal-javascript/
+                //$('#staticBackdrop').modal('hide');
+                //--$container[0].parentElement.innerHTML = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2"><circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" /><polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " /></svg><p class="success">Seu cadastro foi concluído com sucesso!</p>';
+                  //--event.currentTarget.firstChild.hidden = true; //('.steps').addClass('hide');
+                  //https://blog.ldtalentwork.com/2020/07/29/how-to-create-a-countdown-timer-using-css-js/
+                  //https://wpshopmart.com/css-download-buttons/
+                  //--event.currentTarget.childNodes[2].innerHTML = '<div class="d-flex justify-content-center"><button type="button" class="btn btn-success btn-lg mb-1" onclick="closeModal();" aria-label="close" data-dismiss="modal">OK</button></div>';
+                  $container = $('#form-total').find('section[data-step="step' + currentIndex +'"]');
+                  $container[0].parentElement.innerHTML = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2"><circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" /><polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " /></svg><p class="success">Seu cadastro foi concluído com sucesso!</p>';
+                  event.currentTarget.firstChild.hidden = true;
+                  event.currentTarget.childNodes[2].innerHTML = '<div class="d-flex justify-content-center"><button type="button" class="btn btn-success btn-lg mb-1" onclick="closeModal();" aria-label="close" data-dismiss="modal">OK</button></div>';                  
+                  return form.valid();
+              })
+              .catch((err) => {
+                console.log("*=promise rejected=*", err);
+                return !form.valid();
+              })
+              .finally(res => { 
+                console.log("*=promise finally=*");
+              });
+
+            //return form.valid();
         },
         onFinished: function (event, currentIndex)
         {
-          let url = "https://driverconnect.azurewebsites.net/api/Customer";
+          console.log('onFinished', form.valid(), event, currentIndex);
 
-          let payload = {
-              "name": fullname_val, // document.querySelector("#fullname"),
-              "dob": new Date(date_val).toISOString(),
-              "gender": gender_val,
-              "currentAddress": address_number_val,
-              "permanentAddress": cpf_val.replace(/\D/g, ''),
-              "mobilePhone": phone_val,
-              "city": address_city_val,
-              "nationality": "",
-              "pinCode": "",
-              "createdOn": new Date().toJSON(),
-              "person": {
-                "name": fullname_val,
-                "documentNumber": cpf_val,
-                "phone": phone_val,
-                "email": email_val,
-                "gender": gender_val,
-                "dob": new Date(date_val).toJSON(),
-                "createdAt": new Date().toJSON()
-              },
-              "address": {
-                "street": address_val,
-                "number": address_number_val,
-                "extent": address_extent_val,
-                "city": address_city_val,
-                "state": address_state_val,
-                "zipCode": parseInt(cep_val.replace('-', '')),
-                "pin": ""
-              }
-            };
-
-            console.log(url, payload);
-
-            postPromise(url, payload)
-            .then((data) => {
-              console.log("promise resolved", data);
-              alert('Seu cadastro foi finalizado!');
-              //https://laracasts.com/discuss/channels/general-discussion/how-to-hide-a-bootstrap-5-modal-window-in-pure-javascript
-              //https://www.geeksforgeeks.org/how-to-hide-bootstrap-modal-with-javascript/
-              //https://www.delftstack.com/howto/javascript/close-modal-javascript/
-              //$('#staticBackdrop').modal('hide');
-              $container[0].parentElement.innerHTML = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2"><circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" /><polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " /></svg><p class="success">Seu cadastro foi concluído com sucesso!</p>';
-                event.currentTarget.firstChild.hidden = true; //('.steps').addClass('hide');
-                //https://blog.ldtalentwork.com/2020/07/29/how-to-create-a-countdown-timer-using-css-js/
-                //https://wpshopmart.com/css-download-buttons/
-                event.currentTarget.childNodes[2].innerHTML = '<div class="d-flex justify-content-center"><button type="button" class="btn btn-success btn-lg mb-1" onclick="closeModal();" aria-label="close" data-dismiss="modal">OK</button></div>';
-            })
-            .catch((err) => {
-              console.log("promise rejected", err);
-            })
-            .finally(res => { 
-              console.log("promise finally");
-            });
         },
         onFinish: function () {
             alert('Sumited');
-            console.log('onFinish', form.valid()); 
+            console.log('onFinished', form.valid(), event, currentIndex);
         }
     });
 
