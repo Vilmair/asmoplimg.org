@@ -803,7 +803,22 @@
                                     </div>
                                     <div class="col-md-6 mb-2">
                                       <label for="vehicle-branch">Marca</label>
-                                      <input type="text" placeholder="Volkswagen" name="vehicle-branch" class="form-control form-control-lg input-step-2-1" id="vehicle-branch" />
+                                      <select class="form-select form-control form-control-lg select" name="vehicle-branch" id="vehicle-branch">
+                                        <option value="1" disabled>Selecione</option>
+                                        <option value="AUDI">AUDI</option>
+                                        <option value="CHEVROLET">CHEVROLET</option>
+                                        <option value="CHERY">CHERY</option>
+                                        <option value="FIAT">FIAT</option>
+                                        <option value="FORD">FORD</option>
+                                        <option value="HONDA">HONDA</option>
+                                        <option value="HYUNDAI">HYUNDAI</option>
+                                        <option value="PEOUGEOT">PEOUGEOT</option>
+                                        <option value="RENAULT">RENAULT</option>
+                                        <option value="TOIOTA">TOIOTA</option>
+                                        <option value="WOLKSWAGEM">WOLKSWAGEM</option>                                                                                                                        
+                                        <option value="OUTRO">OUTRO</option>
+                                      </select>
+                                      <!-- <input type="text" placeholder="Volkswagen" name="vehicle-branch" class="form-control form-control-lg input-step-2-1" id="vehicle-branch" /> -->
                                     </div>
                                   </div>
                                   <div class="row">
@@ -1787,7 +1802,7 @@ $(function() {
             gender1_val = $('form input[type=radio]:checked').val();
             gender_val = $('select#gender option').filter(':selected').val();
             date_val = $('select#month option').filter(':selected').val() + '/' + $('select#date option').filter(':selected').val() + '/' + $('select#year option').filter(':selected').val() ;
-            vehicle_branch_val = $('#vehicle-branch').val();
+            vehicle_branch_val = $('select#vehicle-branch option').filter(':selected').val();
             vehicle_model_val = $('#vehicle-model').val();
             vehicle_plate_number_val = $('#vehicle-plate-number').val();
 
