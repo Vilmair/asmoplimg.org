@@ -1805,6 +1805,17 @@ section .contain p {
   outline: 0;
   color: #eee;
 }
+.success {
+  display: block;
+  font-size: 2em;
+  color: #eee;
+  margin: 1em;
+  padding: 2em;
+  text-align: center;
+}
+.form-register .actions .btn-success {
+  padding: 1em 4em;
+}
 .error {
   color: #ec1c24;
 }
@@ -1813,4 +1824,9 @@ section .contain p {
   font-size: small;
   font-style: italic;
   padding: .3em !important;
+}
+svg {
+  width: 100px;
+  display: block;
+  margin: 50px auto 0
 }
