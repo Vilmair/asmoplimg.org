@@ -66,6 +66,20 @@ $(document).ready(function(){
         return (this.optional(element) || true);
     }, 'Informe um número de cpf válido!');
 
+    jQuery.extend(jQuery.validator.messages, {
+        required: "Preencimento obrigatório",
+        remote: "",
+        email: "@",
+        phone: "(##) #####-####",
+        url: "",
+        date: "",
+        dateISO: "",
+        number: "",
+        digits: "",
+        creditcard: "",
+        equalTo: ""
+    });
+
 })(jQuery);
 
 });

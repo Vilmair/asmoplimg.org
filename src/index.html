@@ -1054,8 +1054,8 @@ $(document).ready(function(){
         action_type = "create_new"
         console.log('cpf ok');
       } else {
-        alert('Informe o CPF antes de continuar');
-        //$('#cep').focus();
+        //alert('Informe o CPF antes de continuar');
+        $('#cpf').focus();
         return;
       };
     });
@@ -1401,21 +1401,6 @@ var app = (function(){
     }
 })();
 
-
-jQuery.extend(jQuery.validator.messages, {
-        required: "Preencimento obrigatório",
-        remote: "",
-        email: "@",
-        phone: "(##) #####-####",
-        url: "",
-        date: "",
-        dateISO: "",
-        number: "",
-        digits: "",
-        creditcard: "",
-        equalTo: ""
-    });
-
     //const optionToSelect = optYear.find(item => item.text ==='2022');
 //console.log(selYear, optionToSelect); // [0,1,2,3,4,5,6]
 
@@ -1691,6 +1676,7 @@ $(function() {
             // },
             email : {
                 required: true,
+                email: true,
             },
             phone : {
                 required: true,
@@ -1743,6 +1729,17 @@ $(function() {
             // cvc: {
             //     required: true,
             // }
+        },
+          messages: {
+            fullname: 'This field is required',
+          //   lname: 'This field is required',
+          //   email: 'Enter a valid email',
+          //   psword: {
+          //   minlength: 'Password must be at least 8 characters long'
+          // }
+        },
+        submitHandler: function(form) {
+          form.submit();
         },
         onfocusout: function(element) {
             $(element).valid();
