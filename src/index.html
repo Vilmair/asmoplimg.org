@@ -1694,6 +1694,11 @@ $(function() {
             },
             phone : {
                 required: true,
+                celular: true,
+            },
+            cpf : {
+                required: true,
+                cpf: true,
             },
             cep : {
                 required: true,
@@ -1925,7 +1930,6 @@ $(function() {
         onFinished: function (event, currentIndex)
         {
           console.log('onFinished', form.valid(), event, currentIndex);
-
         },
         onFinish: function () {
             alert('Sumited');
@@ -1949,6 +1953,9 @@ $(function() {
       });
       return promise;
     };
+
+// var strCPF = "79150233655";
+// console.log('TestaCPF', TestaCPF(strCPF));
 
     $('.forward').click(function(){
       console.log('forward');
